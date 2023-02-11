@@ -1,9 +1,17 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Home, SharedLayout } from 'pages/index'
+
+// TODO choose font
 function App(): JSX.Element {
   return (
-    <div className="text-3xl font-bold underline bg-secondary p-8">
-      Hello typescript
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SharedLayout />}>
+          <Route index element={<Home />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

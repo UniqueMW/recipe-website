@@ -7,7 +7,11 @@ module.exports = {
       secondary: '#072AC8',
       action: '#C9184A'
     },
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['Montserrat', 'sans-serif']
+      }
+    }
   },
 
   plugins: []
