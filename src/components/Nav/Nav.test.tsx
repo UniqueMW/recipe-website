@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import Nav from './Nav'
 
-it.only('Should check if all links are rendered.', () => {
-  // TODO Change test after adding search icon.
+it('Should check if all links are rendered.', () => {
   render(
     <MemoryRouter>
       <Nav />

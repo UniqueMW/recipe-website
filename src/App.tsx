@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home, SharedLayout } from 'pages/index'
 
-// TODO choose font
 function App(): JSX.Element {
   return (
     <BrowserRouter>
