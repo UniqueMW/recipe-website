@@ -13,7 +13,7 @@ const setShowMenuSpy = jest.fn()
 function renderComponent(): void {
   render(
     <MemoryRouter>
-      <SideMenu showMenu={true} setShowMenu={setShowMenuSpy} />
+      <SideMenu setShowMenu={setShowMenuSpy} />
     </MemoryRouter>
   )
 }

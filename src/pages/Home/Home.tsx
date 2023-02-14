@@ -1,7 +1,12 @@
+import { Hero } from 'components'
 import React from 'react'
 
 function Home(): JSX.Element {
-  return <h1>Home</h1>
+  return (
+    <>
+      <Hero />
+    </>
+  )
 }
 
 export default Home
