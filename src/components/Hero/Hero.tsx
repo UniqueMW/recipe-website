@@ -1,27 +1,47 @@
 import * as React from 'react'
-// import axios from 'axios'
 import { useFetch } from 'hooks'
-import type { RootObject } from 'hooks/useFetch/useFetch'
+import type { Meals } from 'types'
+import * as _ from 'lodash'
+import { GoLocation } from 'react-icons/go'
+import { BiCategory } from 'react-icons/bi'
 
 function Hero(): JSX.Element {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php'
-  const [data, setData] = React.useState<RootObject>()
 
-  // Perform data fetching operations in a hook.
-  React.useEffect(() => {
-    const fetchedData = useFetch(url)
-    fetchedData
-      .then((response) => {
-        setData(response)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
-  }, [])
+  // get random data from the api using useFetch hook
+  const fetchedData = useFetch<Meals>(url)?.meals[0]
 
-  console.log(data)
-  if (typeof data !== 'undefined') {
-    return <section>{data.meals[0].strMeal}</section>
+  if (typeof fetchedData !== 'undefined') {
+    return (
+      <section className="flex flex-row px-12 text-lg font-sans justify-center max-h-[90vh] justify-center">
+        <section className=" flex flex-col min-w-[40vw] font-medium px-4 py-10 shadow-sm space-y-14 items-center">
+          <h1 className="font-bold text-center text-2xl border-b-2 max-w-fit">
+            {fetchedData.strMeal}
+          </h1>
+          <p className="text-md">
+            {_.truncate(fetchedData.strInstructions, {
+              length: 300,
+              omission: '...'
+            })}
+          </p>
+          <section className="flex flex-row justify-evenly space-x-4">
+            <div className=" bg-[rgba(110,190,243,0.7)] p-2 flex flex-row space-x-2 rounded-sm">
+              <GoLocation className="mt-1" />
+              <h2>{fetchedData.strArea}</h2>
+            </div>
+            <div className="bg-[rgba(110,190,243,0.7)] p-2 flex flex-row space-x-2 rounded-sm">
+              <BiCategory className="mt-1" />
+              <h2>{fetchedData.strCategory}</h2>
+            </div>
+          </section>
+        </section>
+        <img
+          src={fetchedData.strMealThumb}
+          alt={fetchedData.strMeal}
+          className="bg-secondary w-[100%] h-auto"
+        />
+      </section>
+    )
   } else {
     return <h1>Loading....</h1>
   }
