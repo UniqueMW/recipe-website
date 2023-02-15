@@ -10,7 +10,7 @@ function SharedLayout(): JSX.Element {
   // Responsible for sideMenu slideIn and slideOut animations, using GSAP.
   React.useEffect(() => {
     if (typeof sideMenuRef.current !== 'undefined' && showMenu) {
-      gsap.to(sideMenuRef.current, { x: '0', duration: 0.3 })
+      gsap.to(sideMenuRef.current, { x: '0', duration: 0.5 })
     } else if (typeof sideMenuRef.current !== 'undefined' && !showMenu) {
       gsap.to(sideMenuRef.current, { x: '-100vw', duration: 0.2 })
     }

@@ -1,8 +1,11 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
+import { RxCross2 } from 'react-icons/rx'
 interface sideMenuProps {
   setShowMenu: (check: boolean) => void
 }
+
+// TODO add more stuff on the sideMenu eg stuff from the footer
 
 const SideMenu = React.forwardRef<HTMLDivElement, sideMenuProps>(function (
   props: sideMenuProps,
@@ -14,9 +17,14 @@ const SideMenu = React.forwardRef<HTMLDivElement, sideMenuProps>(function (
   return (
     <div className="flex flex-row fixed inset-0 md:hidden side" ref={ref}>
       <section className="flex flex-col space-y-10 bg-primary text-lg font-sans px-4 shadow-md min-h-screen min-w-[60vw]  py-4">
-        <Link to="/" className="text-xl font-bold tracking-wider">
-          UniqueMW
-        </Link>
+        <div className="flex flex-row justify-between">
+          <Link to="/" className="text-xl font-bold tracking-wider ">
+            UniqueMW
+          </Link>
+          <button onClick={handleHideMenu} className="text-xl font-bold">
+            <RxCross2 />
+          </button>
+        </div>
         <div className="flex flex-col space-y-4">
           <Link to="/category">Category</Link>
           <Link to="/location">Location</Link>
