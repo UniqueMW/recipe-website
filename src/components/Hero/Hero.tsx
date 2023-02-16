@@ -13,7 +13,7 @@ function Hero(): JSX.Element {
 
   if (typeof fetchedData !== 'undefined') {
     return (
-      <section className="flex flex-row px-12 text-lg font-sans justify-center max-h-[90vh] justify-center">
+      <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90vh]">
         <section className=" flex flex-col min-w-[40vw] font-medium px-4 py-10 shadow-sm space-y-14 items-center">
           <h1 className="font-bold text-center text-2xl border-b-2 max-w-fit">
             {fetchedData.strMeal}
@@ -35,11 +35,7 @@ function Hero(): JSX.Element {
             </div>
           </section>
         </section>
-        <img
-          src={fetchedData.strMealThumb}
-          alt={fetchedData.strMeal}
-          className="bg-secondary w-[100%] h-auto"
-        />
+        <img src={fetchedData.strMealThumb} alt={fetchedData.strMeal} />
       </section>
     )
   } else {
