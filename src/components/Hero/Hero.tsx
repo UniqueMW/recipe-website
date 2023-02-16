@@ -4,42 +4,58 @@ import type { Meals } from 'types'
 import * as _ from 'lodash'
 import { GoLocation } from 'react-icons/go'
 import { BiCategory } from 'react-icons/bi'
+import Tag from 'components/Tag/Tag'
+import HeroPlaceholder from './HeroPlaceholder'
+import { Link } from 'react-router-dom'
 
 function Hero(): JSX.Element {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
-  // get random data from the api using useFetch hook
+  // TODO add a test.
+  // TODO add a skeleton loading component
+  // TODO error boundary for the component and the hero image.
+  // TODO think of adding scroll trigger animations.
   const fetchedData = useFetch<Meals>(url)?.meals[0]
 
+  // shortening random meal instruction to 300 words.
+  let shortInstruction = null
+  if (typeof fetchedData !== 'undefined')
+    shortInstruction = _.truncate(fetchedData.strInstructions, {
+      length: 300,
+      omission: '...'
+    })
+
+  // render hero component if nothing is wrong.
   if (typeof fetchedData !== 'undefined') {
     return (
-      <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90vh]">
-        <section className=" flex flex-col min-w-[40vw] font-medium px-4 py-10 shadow-sm space-y-14 items-center">
-          <h1 className="font-bold text-center text-2xl border-b-2 max-w-fit">
-            {fetchedData.strMeal}
-          </h1>
-          <p className="text-md">
-            {_.truncate(fetchedData.strInstructions, {
-              length: 300,
-              omission: '...'
-            })}
-          </p>
-          <section className="flex flex-row justify-evenly space-x-4">
-            <div className=" bg-[rgba(110,190,243,0.7)] p-2 flex flex-row space-x-2 rounded-sm">
-              <GoLocation className="mt-1" />
-              <h2>{fetchedData.strArea}</h2>
-            </div>
-            <div className="bg-[rgba(110,190,243,0.7)] p-2 flex flex-row space-x-2 rounded-sm">
-              <BiCategory className="mt-1" />
-              <h2>{fetchedData.strCategory}</h2>
-            </div>
+      <Link to={`/details:${fetchedData.idMeal}`}>
+        <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg text-[#F5F5DC] font-sans justify-center lg:max-h-[90vh]">
+          <section className=" flex flex-col min-w-[40vw] font-medium px-4 py-10 shadow-sm md:space-y-14 space-y-8 items-center bg-secondary">
+            <h1 className="font-bold text-center md:text-2xl text-lg border-b-2 max-w-fit">
+              {fetchedData.strMeal}
+            </h1>
+
+            <section className="flex flex-row justify-evenly md:space-x-4 space-x-2">
+              <Tag content={fetchedData.strArea}>
+                <GoLocation className="mt-1" />
+              </Tag>
+              <Tag content={fetchedData.strCategory}>
+                <BiCategory className="mt-1" />
+              </Tag>
+            </section>
+
+            <p className="text-base md:text-lg font-normal md:font-medium text-justify ">
+              {shortInstruction}
+            </p>
           </section>
+          <img src={fetchedData.strMealThumb} alt={fetchedData.strMeal} />
         </section>
-        <img src={fetchedData.strMealThumb} alt={fetchedData.strMeal} />
-      </section>
+      </Link>
     )
-  } else {
-    return <h1>Loading....</h1>
+  }
+  // render this component when loading.
+  else {
+    return <HeroPlaceholder />
   }
 }
 
