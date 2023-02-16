@@ -22,15 +22,15 @@ function Hero(): JSX.Element {
   if (typeof fetchedData !== 'undefined')
     shortInstruction = _.truncate(fetchedData.strInstructions, {
       length: 300,
-      omission: '...'
+      omission: '.....'
     })
 
   // render hero component if nothing is wrong.
   if (typeof fetchedData !== 'undefined') {
     return (
       <Link to={`/details:${fetchedData.idMeal}`}>
-        <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg text-[#F5F5DC] font-sans justify-center lg:max-h-[90vh]">
-          <section className=" flex flex-col min-w-[40vw] font-medium px-4 py-10 shadow-sm md:space-y-14 space-y-8 items-center bg-secondary">
+        <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90vh]">
+          <section className=" flex flex-col min-w-[40vw] border font-medium px-4 py-10 md:space-y-14 space-y-8 items-center bg-primary">
             <h1 className="font-bold text-center md:text-2xl text-lg border-b-2 max-w-fit">
               {fetchedData.strMeal}
             </h1>
@@ -44,7 +44,7 @@ function Hero(): JSX.Element {
               </Tag>
             </section>
 
-            <p className="text-base md:text-lg font-normal md:font-medium text-justify ">
+            <p className="text-base md:text-xl font-normal tracking-wide font-sans text-justify ">
               {shortInstruction}
             </p>
           </section>

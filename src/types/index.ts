@@ -57,3 +57,13 @@ export interface Meal {
 export interface Meals {
   meals: Meal[]
 }
+
+export interface CardMeal {
+  strMeal: string
+  strMealThumb: string
+  idMeal: string
+}
+
+export interface CardMeals {
+  meals: CardMeal[]
+}

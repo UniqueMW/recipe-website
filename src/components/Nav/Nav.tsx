@@ -4,8 +4,8 @@ import { FaSearch, FaRegBookmark } from 'react-icons/fa'
 
 function Nav(): JSX.Element {
   return (
-    <nav className="bg-primary md:flex flex-row py-4 px-20 text-lg justify-between shadow-sm content-center hidden">
-      <Link to="/" className="text-xl font-bold tracking-wider">
+    <nav className="bg-primary md:flex flex-row py-4 px-20 md:text-xl text-lg font-normal justify-between shadow-sm content-center hidden">
+      <Link to="/" className="md:text-2xl text-xl font-bold tracking-wider">
         UniqueMW
       </Link>
 
@@ -20,7 +20,7 @@ function Nav(): JSX.Element {
           <FaRegBookmark />
         </Link>
         <Link to="/search" data-testid="search">
-          <FaSearch className="text-xl" />
+          <FaSearch />
         </Link>
       </section>
     </nav>
