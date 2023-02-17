@@ -3,7 +3,6 @@ import * as React from 'react'
 
 function useFetch<T>(url: string): T | undefined {
   const [data, setData] = React.useState<T>()
-
   React.useEffect(() => {
     fetchData<T>(url)
       .then((response) => {
@@ -13,7 +12,6 @@ function useFetch<T>(url: string): T | undefined {
         console.log(error)
       })
   }, [url])
-
   return data
 }
 

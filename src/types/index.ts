@@ -67,3 +67,34 @@ export interface CardMeal {
 export interface CardMeals {
   meals: CardMeal[]
 }
+
+export interface Category {
+  strCategory: string
+}
+export interface CategoryObject {
+  meals: Category[]
+}
+
+export interface GridInfo {
+  content: string
+  url: string
+}
+
+export interface Ingredient {
+  idIngredient: string
+  strIngredient: string
+  strDescription: string
+  strType?: any
+}
+
+export interface IngredientObject {
+  meals: Ingredient[]
+}
+
+export interface Location {
+  strArea: string
+}
+
+export interface LocationObject {
+  meals: Location[]
+}
