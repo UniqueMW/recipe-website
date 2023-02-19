@@ -31,7 +31,7 @@ function Hero(): JSX.Element {
       <Link to={`/details:${fetchedData.idMeal}`}>
         <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90vh]">
           <section className=" flex flex-col min-w-[40vw] border font-medium px-4 py-10 md:space-y-14 space-y-8 items-center bg-primary">
-            <h1 className="font-bold text-center md:text-2xl text-lg border-b-2 max-w-fit">
+            <h1 className="font-bold text-center md:text-2xl text-lg border-b-2 max-w-fit md:mt-16">
               {fetchedData.strMeal}
             </h1>
 

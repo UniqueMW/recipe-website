@@ -16,17 +16,14 @@ type GridInfoObjects = CategoryObject & LocationObject & IngredientObject
 
 function useGridInfo(contentType: string, url: string): GridInfo {
   const [gridInfo, setGridInfo] = React.useState<GridInfo>()
-  // fetch all list
-  // 1 fetch all the list based on content type
-  // pick on content on random
-  // generate a new search url
-  // return new url and random content
+  // fetch data a list of filter values.
   const fetchedData = useFetch<GridInfoObjects>(url)
 
   React.useEffect(() => {
-    // do it once on intial render
+    // do it once on initial render
     if (typeof fetchedData !== 'undefined') {
       if (contentType === 'CATEGORY') {
+        // choose a value from the fetched list on random.
         const randomCategory = randomizeSearch<Category>(fetchedData.meals)
 
         const newGridInfo = {
@@ -36,6 +33,7 @@ function useGridInfo(contentType: string, url: string): GridInfo {
         // return a state
         setGridInfo(newGridInfo)
       } else if (contentType === 'LOCATION') {
+        // choose a value from the fetched list on random.
         const randomLocation = randomizeSearch<Location>(fetchedData.meals)
         const newGridInfo = {
           url: `https:www.themealdb.com/api/json/v1/1/filter.php?a=${randomLocation?.strArea}`,
@@ -45,6 +43,7 @@ function useGridInfo(contentType: string, url: string): GridInfo {
         // return a state
         setGridInfo(newGridInfo)
       } else if (contentType === 'INGREDIENT') {
+        // choose a value from the fetched list on random.
         const randomIngredient = randomizeSearch<Ingredient>(fetchedData.meals)
         const newGridInfo = {
           url: `https:www.themealdb.com/api/json/v1/1/filter.php?i=${randomIngredient?.strIngredient}`,
