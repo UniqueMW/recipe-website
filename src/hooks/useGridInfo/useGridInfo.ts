@@ -37,7 +37,7 @@ function useGridInfo(contentType: string, url: string): GridInfo {
         const randomLocation = randomizeSearch<Location>(fetchedData.meals)
         const newGridInfo = {
           url: `https:www.themealdb.com/api/json/v1/1/filter.php?a=${randomLocation?.strArea}`,
-          content: randomLocation?.strArea
+          content: `${randomLocation?.strArea} Dishes`
         }
 
         // return a state
@@ -47,7 +47,7 @@ function useGridInfo(contentType: string, url: string): GridInfo {
         const randomIngredient = randomizeSearch<Ingredient>(fetchedData.meals)
         const newGridInfo = {
           url: `https:www.themealdb.com/api/json/v1/1/filter.php?i=${randomIngredient?.strIngredient}`,
-          content: randomIngredient?.strIngredient
+          content: `Made with ${randomIngredient?.strIngredient}`
         }
 
         // return a state

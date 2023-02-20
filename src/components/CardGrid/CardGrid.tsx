@@ -11,6 +11,8 @@ interface CardGridProps {
   amount: number
 }
 
+// TODO handle fetched data if it returns {meals:null} eg Black Beans for ingredients.
+
 const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   // generate random data and url for cardGrid based on category,ingredient and location
   const gridInfo = useGridInfo(props.gridContent, props.url)
