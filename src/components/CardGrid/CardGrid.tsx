@@ -6,7 +6,7 @@ import { useFetch, useGridInfo } from 'hooks'
 import type { CardMeals } from 'types'
 
 interface CardGridProps {
-  gridContent: string
+  gridContent: 'CATEGORY' | 'LOCATION' | 'INGREDIENT'
   url: string
   amount: number
 }
