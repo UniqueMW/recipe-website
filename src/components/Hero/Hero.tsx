@@ -3,10 +3,10 @@ import { useFetch } from 'hooks'
 import type { Meals } from 'types'
 import * as _ from 'lodash'
 import { GoLocation } from 'react-icons/go'
+import { Link } from 'react-router-dom'
 import { BiCategory } from 'react-icons/bi'
 import Tag from 'components/Tag/Tag'
 import HeroPlaceholder from './HeroPlaceholder'
-import { Link } from 'react-router-dom'
 
 function Hero(): JSX.Element {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php'

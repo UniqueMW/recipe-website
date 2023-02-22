@@ -1,15 +1,16 @@
-import { fetchData } from 'api'
+import axios from 'axios'
 import * as React from 'react'
 
 function useFetch<T>(url: string): T | undefined {
   const [data, setData] = React.useState<T>()
   React.useEffect(() => {
-    fetchData<T>(url)
+    axios<T>(url)
       .then((response) => {
-        setData(response)
+        setData(response.data)
       })
       .catch((error) => {
-        console.log(error)
+        setData(error)
+        throw new Error(error)
       })
   }, [url])
   return data

@@ -1,5 +1,6 @@
 import React from 'react'
-import { CardGrid, Hero } from 'components'
+import { CardGrid, ErrorFallback, Hero } from 'components'
+import { ErrorBoundary } from 'react-error-boundary'
 // import { useGridInfo } from 'hooks'
 
 // TODO add unit test
@@ -19,7 +20,9 @@ function Home(): JSX.Element {
 
   return (
     <>
-      <Hero />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Hero />
+      </ErrorBoundary>
       <CardGrid gridContent="CATEGORY" url={categoryListUrl} amount={10} />
       <CardGrid gridContent="LOCATION" url={locationListUrl} amount={10} />
       <CardGrid gridContent="INGREDIENT" url={ingredientListUrl} amount={10} />
