@@ -4,6 +4,8 @@ import * as _ from 'lodash'
 import { useFetch, useGridInfo } from 'hooks'
 
 import type { CardMeals } from 'types'
+import { ErrorBoundary } from 'react-error-boundary'
+import ErrorFallback from 'components/ErrorFallback/ErrorFallback'
 
 interface CardGridProps {
   gridContent: 'CATEGORY' | 'LOCATION' | 'INGREDIENT'
@@ -13,6 +15,11 @@ interface CardGridProps {
 
 // TODO handle fetched data if it returns {meals:null} eg Black Beans for ingredients.
 
+/**
+ * Problem: make component reusable in many scenario
+ * Solution: use prop url if amount is 0
+ */
+
 const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   // generate random data and url for cardGrid based on category,ingredient and location
   const gridInfo = useGridInfo(props.gridContent, props.url)
@@ -20,18 +27,22 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   // Fetch data to be rendered, from an api.
   const fetchedData = useFetch<CardMeals>(gridInfo.url)
 
-  if (typeof fetchedData !== 'undefined') {
-    // takes the first specified amount from fetched data array.
-    const dataArr = _.take(fetchedData.meals, props.amount)
+  const dataArr = React.useMemo(() => {
+    if (typeof fetchedData !== 'undefined')
+      return _.take(fetchedData.meals, props.amount)
+  }, [props.amount, fetchedData])
 
+  if (typeof dataArr !== 'undefined') {
+    // takes the first specified amount from fetched data array.
     // generate an array of cards.
     const cards = dataArr.map((meal) => (
-      <Card
-        key={meal.idMeal}
-        meal={meal.strMeal}
-        img={meal.strMealThumb}
-        mealId={meal.idMeal}
-      />
+      <ErrorBoundary FallbackComponent={ErrorFallback} key={meal.idMeal}>
+        <Card
+          meal={meal.strMeal}
+          img={meal.strMealThumb}
+          mealId={meal.idMeal}
+        />
+      </ErrorBoundary>
     ))
 
     // display the whole grid as required.

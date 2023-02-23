@@ -6,5 +6,18 @@ import Tag from './Tag/Tag'
 import Card from './Card/Card'
 import CardGrid from './CardGrid/CardGrid'
 import ErrorFallback from './ErrorFallback/ErrorFallback'
+import PageGrid from './PageGrid/PageGrid'
+import Filter from './Filter/Filter'
 
-export { Nav, MobileNav, SideMenu, Hero, Tag, Card, CardGrid, ErrorFallback }
+export {
+  Nav,
+  MobileNav,
+  SideMenu,
+  Hero,
+  Tag,
+  Card,
+  CardGrid,
+  ErrorFallback,
+  PageGrid,
+  Filter
+}

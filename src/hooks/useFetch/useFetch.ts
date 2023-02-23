@@ -1,4 +1,5 @@
 import axios from 'axios'
+import type { AxiosError } from 'axios'
 import * as React from 'react'
 
 function useFetch<T>(url: string): T | undefined {
@@ -9,8 +10,10 @@ function useFetch<T>(url: string): T | undefined {
         setData(response.data)
       })
       .catch((error) => {
+        const err = error as AxiosError
         setData(error)
-        throw new Error(error)
+        console.log(err.message)
+        throw new Error(err.message)
       })
   }, [url])
   return data

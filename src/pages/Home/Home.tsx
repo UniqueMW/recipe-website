@@ -23,9 +23,22 @@ function Home(): JSX.Element {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Hero />
       </ErrorBoundary>
-      <CardGrid gridContent="CATEGORY" url={categoryListUrl} amount={10} />
-      <CardGrid gridContent="LOCATION" url={locationListUrl} amount={10} />
-      <CardGrid gridContent="INGREDIENT" url={ingredientListUrl} amount={10} />
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <CardGrid gridContent="CATEGORY" url={categoryListUrl} amount={10} />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <CardGrid gridContent="LOCATION" url={locationListUrl} amount={10} />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <CardGrid
+          gridContent="INGREDIENT"
+          url={ingredientListUrl}
+          amount={10}
+        />
+      </ErrorBoundary>
     </>
   )
 }

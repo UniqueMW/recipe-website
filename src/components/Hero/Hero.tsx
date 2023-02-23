@@ -18,7 +18,7 @@ function Hero(): JSX.Element {
 
   // shortening random meal instruction to 300 words.
   let shortInstruction = null
-  if (typeof fetchedData !== 'undefined')
+  if (typeof fetchedData?.idMeal !== 'undefined')
     shortInstruction = _.truncate(fetchedData.strInstructions, {
       length: 300,
       omission: '.....'
@@ -43,7 +43,7 @@ function Hero(): JSX.Element {
               </Tag>
             </section>
 
-            <p className="text-base md:text-xl font-normal tracking-wide font-sans text-justify ">
+            <p className="text-base md:text-lg font-normal tracking-wide font-sans text-justify ">
               {shortInstruction}
             </p>
           </section>
@@ -53,9 +53,7 @@ function Hero(): JSX.Element {
     )
   }
   // render this component when loading.
-  else {
-    return <HeroPlaceholder />
-  }
+  return <HeroPlaceholder />
 }
 
 export default Hero
