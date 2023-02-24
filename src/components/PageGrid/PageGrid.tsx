@@ -5,6 +5,7 @@ import Card from 'components/Card/Card'
 import { useFetch } from 'hooks'
 import type { CardMeals } from 'types'
 
+// TODO add loading and null feature
 interface IPageGridProps {
   url: string
 }

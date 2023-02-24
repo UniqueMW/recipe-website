@@ -1,12 +1,16 @@
 import { useFetch } from 'hooks'
 import * as React from 'react'
 import { BiFilterAlt } from 'react-icons/bi'
+import _ from 'lodash'
 
 import type { CategoryObject, LocationObject, IngredientObject } from 'types'
+
+// TODO make filter more good looking.
 interface IFilterProps {
   url: string
   setOptionEntry: (entry: string) => void
   initial: string
+  valueKey: 'strArea' | 'strCategory' | 'strIngredient'
 }
 type GridInfoObjects = CategoryObject & LocationObject & IngredientObject
 
@@ -14,26 +18,33 @@ function Filter(props: IFilterProps): JSX.Element {
   // fetch filter options value based on passed url
   const fetchedData = useFetch<GridInfoObjects>(props.url)
 
-  // creating option element to be passed to the select element, by iterating fetchedData.
+  const entries: string[] = []
+
+  // get all the objects values and add them to entries array
+  fetchedData?.meals.map((item) => {
+    _.forIn(item, (content, key) => {
+      if (key === props.valueKey) {
+        entries.push(content)
+      }
+    })
+    return null
+  })
+
+  // creating option element to be passed to the select element, by iterating entries.
   // Selected option is created based on the initial value
-  console.log(fetchedData)
   const optionsArray = React.useMemo(() => {
-    return fetchedData?.meals.map((item, index) =>
-      item.strCategory !== props.initial ? (
-        <option key={`${item.strCategory}${index}`} value={item.strCategory}>
-          {item.strCategory}
+    return entries?.map((item: string, index) =>
+      item !== props.initial ? (
+        <option key={`${item}${index}`} value={item}>
+          {item}
         </option>
       ) : (
-        <option
-          key={`${item.strCategory}${index}`}
-          value={item.strCategory}
-          selected
-        >
-          {item.strCategory}
+        <option key={`${item}${index}`} value={item} selected>
+          {item}
         </option>
       )
     )
-  }, [fetchedData])
+  }, [entries])
 
   const handleSelect = (event: React.FormEvent<HTMLSelectElement>): void => {
     props.setOptionEntry(event.currentTarget.value)
