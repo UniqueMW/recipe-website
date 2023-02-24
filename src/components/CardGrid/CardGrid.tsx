@@ -48,7 +48,7 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
     // display the whole grid as required.
     return (
       <section className="flex flex-col md:px-10 px-2 space-y-4 mb-4 text-base md:text-xl font-sans font-normal md:font-normal tracking-wide">
-        <h1 className="mt-10 text-xl md:text-2xl font-sans font-semibold border-b-2">
+        <h1 className="mt-10 text-xl md:text-2xl font-sans font-semibold border-b border-b-gray-500">
           {gridInfo.content}
         </h1>
         <section className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-flow-row gap-4">
