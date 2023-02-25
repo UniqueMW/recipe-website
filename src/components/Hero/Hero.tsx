@@ -28,7 +28,7 @@ function Hero(): JSX.Element {
   // render hero component if nothing is wrong.
   if (typeof fetchedData !== 'undefined') {
     return (
-      <Link to={`/details:${fetchedData.idMeal}`}>
+      <Link to={`meal/:${fetchedData.idMeal}`}>
         <section className="flex lg:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90%]">
           <section className=" flex flex-col border lg:border-r-0 border-t-0 border-gray-500 min-w-[40vw] font-medium px-4 py-10 md:space-y-14 space-y-8 items-center bg-primary">
             <h1 className="font-bold text-center md:text-2xl text-lg border-b-2 border-gray-500 max-w-fit md:mt-16">

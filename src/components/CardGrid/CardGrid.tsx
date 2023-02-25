@@ -14,6 +14,7 @@ interface CardGridProps {
 }
 
 // TODO handle fetched data if it returns {meals:null} eg Black Beans for ingredients.
+// TODO handle image fallback if image is not available.
 
 /**
  * Problem: make component reusable in many scenario

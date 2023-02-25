@@ -8,6 +8,7 @@ import CardGrid from './CardGrid/CardGrid'
 import ErrorFallback from './ErrorFallback/ErrorFallback'
 import PageGrid from './PageGrid/PageGrid'
 import Filter from './Filter/Filter'
+import MealDetail from './MealDetail/MealDetail'
 
 export {
   Nav,
@@ -19,5 +20,6 @@ export {
   CardGrid,
   ErrorFallback,
   PageGrid,
-  Filter
+  Filter,
+  MealDetail
 }
