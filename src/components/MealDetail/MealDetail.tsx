@@ -2,18 +2,21 @@ import { useFetch } from 'hooks'
 import * as React from 'react'
 import { useParams } from 'react-router-dom'
 import _ from 'lodash'
+import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import type { Meal, Meals } from 'types'
 
-// TODO think about the style
 /**
  * Since some instructions are long
  */
+
+// TODO add the border style tab you thought about.
 function MealDetail(): JSX.Element {
   const [url, setUrl] = React.useState<string>()
-
   const [meal, setMeal] = React.useState<Meal>()
+  // get react-router param
   const { id } = useParams()
 
+  // prepare meal detail url by id from params
   React.useEffect(() => {
     if (typeof id !== 'undefined') {
       const mealId = _.trim(id, ':')
@@ -22,7 +25,10 @@ function MealDetail(): JSX.Element {
     }
   }, [id])
 
+  // Fetch meal details from param id
   const fetchedData = useFetch<Meals>(url)
+
+  // change meal data based on fetchedData results
   React.useEffect(() => {
     if (typeof fetchedData !== 'undefined' && fetchedData.meals !== null) {
       setMeal(fetchedData.meals[0])
@@ -32,13 +38,23 @@ function MealDetail(): JSX.Element {
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-2">
-        <section className="flex flex-col md:mt-20">
+        <section className="flex md:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500">
           <img src={meal.strMealThumb} />
-          <section className="px-2 font-sans space-y-2">
-            <h1 className="text-3xl font-extralight tracking-wide">
+          <section className="px-2 font-sans space-y-10">
+            <h1 className="md:text-6xl text-3xl font-semibold tracking-wide text-center">
               {meal.strMeal}
             </h1>
-            <p className="text-lg text-justify tracking-wider">
+            <div className="flex flex-row text-lg font-sans justify-evenly font-semibold tracking-wider">
+              <button className="py-3 md:px-16 px-6 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center">
+                <BsYoutube className="mr-2" />
+                Tutorial
+              </button>
+              <button className="border-2 border-action md:px-16 px-6 shadow-sm py-3 text-base md:text-lg tracking-wider flex flex-row items-center">
+                <BsJournalBookmark className="mr-2" />
+                Bookmark
+              </button>
+            </div>
+            <p className="text-lg md:border md:border-gray-500 md:p-2 text-justify tracking-wider px-2 md:h-64 md:max-h-full md:overflow-auto scrollbar scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
               {meal.strInstructions}
             </p>
           </section>
@@ -46,6 +62,7 @@ function MealDetail(): JSX.Element {
       </section>
     )
   }
+  // return on loading the component
   return <h1>Loading....</h1>
 }
 
