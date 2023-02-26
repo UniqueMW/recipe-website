@@ -9,8 +9,11 @@ interface CardProps {
 
 function Card(props: CardProps): JSX.Element {
   return (
-    <Link to={`/meal/:${props.mealId}`}>
-      <section className="flex flex-col max-w-fit space-y-3 border border-gray-500 min-w-full ">
+    <Link
+      to={`/meal/:${props.mealId}`}
+      className="space-y-3 border border-gray-500 min-h-full"
+    >
+      <section className="flex flex-col ">
         <img src={props.img} alt={props.meal} />
         <h2 className="text-lg font-medium font-sans px-1">{props.meal}</h2>
       </section>

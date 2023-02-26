@@ -32,7 +32,7 @@ function MealDetail(): JSX.Element {
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-2">
-        <section className="flex md:flex-row flex-col md:mt-20">
+        <section className="flex flex-col md:mt-20">
           <img src={meal.strMealThumb} />
           <section className="px-2 font-sans space-y-2">
             <h1 className="text-3xl font-extralight tracking-wide">

@@ -13,7 +13,7 @@ interface CardGridProps {
   amount: number
 }
 
-// TODO handle fetched data if it returns {meals:null} eg Black Beans for ingredients.
+// TODO handle fetched data if it returns {meals:null} eg Black Beans and Borlotti Beans for ingredients.
 // TODO handle image fallback if image is not available.
 
 /**

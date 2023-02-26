@@ -10,10 +10,14 @@ interface IPageGridProps {
   url: string
 }
 
+// TODO handle null meals
 function PageGrid(props: IPageGridProps): JSX.Element {
   const fetchedData = useFetch<CardMeals>(props.url)
 
   if (typeof fetchedData !== 'undefined') {
+    if (fetchedData.meals === null) {
+      return <h1 className="text-5xl">Empty</h1>
+    }
     // takes the first specified amount from fetched data array.
     // generate an array of cards.
     const cards = fetchedData.meals.map((meal) => (
