@@ -54,7 +54,7 @@ function MealDetail(): JSX.Element {
                 Bookmark
               </button>
             </div>
-            <p className="text-lg md:border md:border-gray-500 md:p-2 text-justify tracking-wider px-2 md:h-64 md:max-h-full md:overflow-auto scrollbar scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
+            <p className="text-lg md:border md:border-gray-500 md:p-2 text-justify tracking-wider px-2 md:h-64 md:max-h-full md:overflow-auto scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
               {meal.strInstructions}
             </p>
           </section>
