@@ -10,6 +10,7 @@ import type { Meal, Meals } from 'types'
  */
 
 // TODO add the border style tab you thought about.
+// TODO handle meals null
 function MealDetail(): JSX.Element {
   const [url, setUrl] = React.useState<string>()
   const [meal, setMeal] = React.useState<Meal>()
@@ -54,7 +55,7 @@ function MealDetail(): JSX.Element {
                 Bookmark
               </button>
             </div>
-            <p className="text-lg md:border md:border-gray-500 md:p-2 text-justify tracking-wider px-2 md:h-64 md:max-h-full md:overflow-auto scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
+            <p className="text-lg border border-gray-500 p-2 text-justify tracking-wider px-2 h-64 max-h-full overflow-auto scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
               {meal.strInstructions}
             </p>
           </section>
