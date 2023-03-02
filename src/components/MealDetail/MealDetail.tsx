@@ -4,9 +4,13 @@ import { useParams } from 'react-router-dom'
 import _ from 'lodash'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import type { Meal, Meals } from 'types'
+import { groupValues } from 'utils'
+import MealTabs from 'components/MealTabs/MealTabs'
 
 /**
- * Since some instructions are long
+ * activeTab
+ * handleActiveTab
+ * activeTabDisplay
  */
 
 // TODO add the border style tab you thought about.
@@ -14,6 +18,8 @@ import type { Meal, Meals } from 'types'
 function MealDetail(): JSX.Element {
   const [url, setUrl] = React.useState<string>()
   const [meal, setMeal] = React.useState<Meal>()
+  const [ingredients, setIngredients] = React.useState<string[]>()
+  const [measurements, setMeasurements] = React.useState<string[]>()
   // get react-router param
   const { id } = useParams()
 
@@ -33,18 +39,31 @@ function MealDetail(): JSX.Element {
   React.useEffect(() => {
     if (typeof fetchedData !== 'undefined' && fetchedData.meals !== null) {
       setMeal(fetchedData.meals[0])
+
+      // create a list of ingredients values.
+      const ingredientsValues = groupValues(
+        fetchedData.meals[0],
+        'strIngredient'
+      )
+      setIngredients(ingredientsValues)
+
+      // create an array of measurements values.
+      const measurementsValues = groupValues(fetchedData.meals[0], 'strMeasure')
+      setMeasurements(measurementsValues)
     }
   }, [fetchedData])
 
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-2">
-        <section className="flex md:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500">
+        <section className="flex md:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
           <img src={meal.strMealThumb} />
-          <section className="px-2 font-sans space-y-10">
+
+          <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">
             <h1 className="md:text-6xl text-3xl font-semibold tracking-wide text-center">
               {meal.strMeal}
             </h1>
+
             <div className="flex flex-row text-lg font-sans justify-evenly font-semibold tracking-wider">
               <button className="py-3 md:px-16 px-6 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center">
                 <BsYoutube className="mr-2" />
@@ -55,9 +74,12 @@ function MealDetail(): JSX.Element {
                 Bookmark
               </button>
             </div>
-            <p className="text-lg border border-gray-500 p-2 text-justify tracking-wider px-2 h-64 max-h-full overflow-auto scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
-              {meal.strInstructions}
-            </p>
+
+            <MealTabs
+              ingredients={ingredients}
+              measurements={measurements}
+              instructions={meal.strInstructions}
+            />
           </section>
         </section>
       </section>
