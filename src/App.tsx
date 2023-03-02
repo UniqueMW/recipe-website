@@ -6,7 +6,8 @@ import {
   SharedLayout,
   Location,
   Ingredients,
-  MealPage
+  MealPage,
+  Tutorial
 } from 'pages/index'
 
 function App(): JSX.Element {
@@ -16,6 +17,7 @@ function App(): JSX.Element {
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
           <Route path="/meal/:id" element={<MealPage />} />
+          <Route path="/tutorial/:videoId" element={<Tutorial />} />
           <Route path="category" element={<Category />} />
           <Route path="location" element={<Location />} />
           <Route path="ingredients" element={<Ingredients />} />

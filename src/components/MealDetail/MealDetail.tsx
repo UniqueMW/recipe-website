@@ -1,6 +1,6 @@
 import { useFetch } from 'hooks'
 import * as React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import _ from 'lodash'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import type { Meal, Meals } from 'types'
@@ -22,6 +22,7 @@ function MealDetail(): JSX.Element {
   const [measurements, setMeasurements] = React.useState<string[]>()
   // get react-router param
   const { id } = useParams()
+  const navigate = useNavigate()
 
   // prepare meal detail url by id from params
   React.useEffect(() => {
@@ -53,6 +54,13 @@ function MealDetail(): JSX.Element {
     }
   }, [fetchedData])
 
+  const handleTutorial = (): void => {
+    if (typeof meal?.strYoutube !== 'undefined') {
+      const splitVideoUrl = _.split(meal.strYoutube, '=', 2)
+      navigate(`/tutorial/:${splitVideoUrl[1]}`)
+    }
+  }
+
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-2">
@@ -65,7 +73,10 @@ function MealDetail(): JSX.Element {
             </h1>
 
             <div className="flex flex-row text-lg font-sans justify-evenly font-semibold tracking-wider">
-              <button className="py-3 md:px-16 px-6 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center">
+              <button
+                className="py-3 md:px-16 px-6 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center"
+                onClick={handleTutorial}
+              >
                 <BsYoutube className="mr-2" />
                 Tutorial
               </button>
