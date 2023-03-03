@@ -5,6 +5,7 @@ import Location from './Location/Location'
 import Ingredients from './Ingredients/Ingredients'
 import MealPage from './MealPage/MealPage'
 import Tutorial from './Tutorial/Tutorial'
+import BookmarkPage from './Bookmark/BookmarkPage'
 
 export {
   Home,
@@ -13,5 +14,6 @@ export {
   Location,
   Ingredients,
   MealPage,
-  Tutorial
+  Tutorial,
+  BookmarkPage
 }
