@@ -7,7 +7,8 @@ import {
   Location,
   Ingredients,
   MealPage,
-  Tutorial
+  Tutorial,
+  BookmarkPage
 } from 'pages/index'
 
 function App(): JSX.Element {
@@ -21,6 +22,7 @@ function App(): JSX.Element {
           <Route path="category" element={<Category />} />
           <Route path="location" element={<Location />} />
           <Route path="ingredients" element={<Ingredients />} />
+          <Route path="bookmark" element={<BookmarkPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

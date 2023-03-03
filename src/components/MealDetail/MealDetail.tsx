@@ -3,14 +3,13 @@ import * as React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import _ from 'lodash'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
+import { FaCheck } from 'react-icons/fa'
 import type { Meal, Meals } from 'types'
-import { groupValues } from 'utils'
+import { groupValues, storeMeal } from 'utils'
 import MealTabs from 'components/MealTabs/MealTabs'
 
 /**
- * activeTab
- * handleActiveTab
- * activeTabDisplay
+ * problem:add meal to bookmark and change bookmark icon on added meal
  */
 
 // TODO add the border style tab you thought about.
@@ -18,11 +17,23 @@ import MealTabs from 'components/MealTabs/MealTabs'
 function MealDetail(): JSX.Element {
   const [url, setUrl] = React.useState<string>()
   const [meal, setMeal] = React.useState<Meal>()
+  const [isBookmarked, setIsBookmarked] = React.useState<boolean>(false)
   const [ingredients, setIngredients] = React.useState<string[]>()
   const [measurements, setMeasurements] = React.useState<string[]>()
   // get react-router param
   const { id } = useParams()
   const navigate = useNavigate()
+
+  React.useEffect(() => {
+    const getBookmarkedMeals = localStorage.getItem('uniqueMW_recipe_bookmark')
+    if (typeof getBookmarkedMeals === 'string') {
+      const bookmarkedMealsArray = JSON.parse(getBookmarkedMeals) as Meal[]
+      const mealResults = bookmarkedMealsArray.find(
+        (item) => item.idMeal === meal?.idMeal
+      )
+      setIsBookmarked(typeof mealResults !== 'undefined')
+    }
+  }, [meal])
 
   // prepare meal detail url by id from params
   React.useEffect(() => {
@@ -61,6 +72,12 @@ function MealDetail(): JSX.Element {
     }
   }
 
+  const handleBookmark = (): void => {
+    if (typeof meal !== 'undefined') {
+      setIsBookmarked(storeMeal(meal))
+    }
+  }
+
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-2">
@@ -80,8 +97,15 @@ function MealDetail(): JSX.Element {
                 <BsYoutube className="mr-2" />
                 Tutorial
               </button>
-              <button className="border-2 border-action md:px-16 px-6 shadow-sm py-3 text-base md:text-lg tracking-wider flex flex-row items-center">
-                <BsJournalBookmark className="mr-2" />
+              <button
+                className="border-2 border-action md:px-16 px-6 shadow-sm py-3 text-base md:text-lg tracking-wider flex flex-row items-center"
+                onClick={handleBookmark}
+              >
+                {isBookmarked ? (
+                  <FaCheck className="mr-2 text-secondary" />
+                ) : (
+                  <BsJournalBookmark className="mr-2" />
+                )}
                 Bookmark
               </button>
             </div>
