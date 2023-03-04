@@ -6,6 +6,7 @@ import Ingredients from './Ingredients/Ingredients'
 import MealPage from './MealPage/MealPage'
 import Tutorial from './Tutorial/Tutorial'
 import BookmarkPage from './Bookmark/BookmarkPage'
+import Search from './Search/Search'
 
 export {
   Home,
@@ -15,5 +16,6 @@ export {
   Ingredients,
   MealPage,
   Tutorial,
-  BookmarkPage
+  BookmarkPage,
+  Search
 }

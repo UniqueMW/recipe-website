@@ -8,7 +8,8 @@ import {
   Ingredients,
   MealPage,
   Tutorial,
-  BookmarkPage
+  BookmarkPage,
+  Search
 } from 'pages/index'
 
 function App(): JSX.Element {
@@ -23,6 +24,7 @@ function App(): JSX.Element {
           <Route path="location" element={<Location />} />
           <Route path="ingredients" element={<Ingredients />} />
           <Route path="bookmark" element={<BookmarkPage />} />
+          <Route path="search" element={<Search />} />
         </Route>
       </Routes>
     </BrowserRouter>
