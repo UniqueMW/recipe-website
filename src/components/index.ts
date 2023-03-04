@@ -11,6 +11,7 @@ import Filter from './Filter/Filter'
 import MealDetail from './MealDetail/MealDetail'
 import MealTabs from './MealTabs/MealTabs'
 import Grid from './Grid/Grid'
+import SearchForm from './SearchForm/SearchForm'
 
 export {
   Nav,
@@ -25,5 +26,6 @@ export {
   Filter,
   MealDetail,
   MealTabs,
-  Grid
+  Grid,
+  SearchForm
 }
