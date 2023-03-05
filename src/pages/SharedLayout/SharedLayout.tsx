@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Nav, MobileNav, SideMenu } from 'components'
+import { Nav, MobileNav, SideMenu, Footer } from 'components'
 import { Outlet } from 'react-router-dom'
 import { gsap } from 'gsap'
 
@@ -22,6 +22,7 @@ function SharedLayout(): JSX.Element {
       <MobileNav setShowMenu={setShowMenu} />
       <SideMenu ref={sideMenuRef} setShowMenu={setShowMenu} />
       <Outlet />
+      <Footer />
     </>
   )
 }

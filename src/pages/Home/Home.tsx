@@ -19,7 +19,7 @@ function Home(): JSX.Element {
     'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
 
   return (
-    <>
+    <section className="min-h-[100vh]">
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Hero />
       </ErrorBoundary>
@@ -39,7 +39,7 @@ function Home(): JSX.Element {
           amount={10}
         />
       </ErrorBoundary>
-    </>
+    </section>
   )
 }
 

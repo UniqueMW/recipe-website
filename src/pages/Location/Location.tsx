@@ -18,7 +18,7 @@ function Location(): JSX.Element {
   }, [optionEntry])
 
   return (
-    <>
+    <section className="min-h-[100vh]">
       <Filter
         url={locationListUrl}
         initial={initial}
@@ -26,7 +26,7 @@ function Location(): JSX.Element {
         valueKey="strArea"
       />
       <PageGrid url={locationUrl} />
-    </>
+    </section>
   )
 }
 

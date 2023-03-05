@@ -14,7 +14,7 @@ function BookmarkPage(): JSX.Element {
 
   if (typeof bookmarkedMeals !== 'undefined' && bookmarkedMeals.length > 0) {
     return (
-      <section className="py-10">
+      <section className="py-10 min-h-[100vh]">
         <Grid
           gridContent="Bookmarked"
           amount={bookmarkedMeals.length}
@@ -23,7 +23,7 @@ function BookmarkPage(): JSX.Element {
       </section>
     )
   }
-  return <h1 className="mt-60">Empty</h1>
+  return <h1 className="mt-60 min-h-[100vh]">Empty</h1>
 }
 
 export default BookmarkPage

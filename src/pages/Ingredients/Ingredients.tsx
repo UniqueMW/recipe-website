@@ -18,7 +18,7 @@ function Ingredients(): JSX.Element {
   }, [optionEntry])
 
   return (
-    <>
+    <section className="min-h-[100vh]">
       <Filter
         url={ingredientsListUrl}
         initial={initial}
@@ -26,7 +26,7 @@ function Ingredients(): JSX.Element {
         valueKey="strIngredient"
       />
       <PageGrid url={ingredientsUrl} />
-    </>
+    </section>
   )
 }
 

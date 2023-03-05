@@ -22,8 +22,8 @@ function Search(): JSX.Element {
   }, [fetchedData])
   console.log(fetchedData)
   return (
-    <section className="flex flex-col md:px-12 px-2 py-20 md:items-center md:space-y-14 space-y-10">
-      <h1 className="md:text-4xl text-2xl text-center tracking-wider font-sans font-semibold">
+    <section className="flex flex-col md:px-12 px-2 py-20 md:items-center md:space-y-14 space-y-10 min-h-[100vh]">
+      <h1 className="md:text-5xl text-2xl text-center tracking-wider font-sans font-semibold">
         Find your next{' '}
         <b className="font-sans text-secondary">cooking recipe</b>
       </h1>

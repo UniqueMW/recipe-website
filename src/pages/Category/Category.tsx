@@ -18,7 +18,7 @@ function Category(): JSX.Element {
   }, [optionEntry])
 
   return (
-    <>
+    <section className="min-h-[100vh]">
       <Filter
         url={categoryListUrl}
         initial={initial}
@@ -26,7 +26,7 @@ function Category(): JSX.Element {
         valueKey="strCategory"
       />
       <PageGrid url={categoryUrl} />
-    </>
+    </section>
   )
 }
 
