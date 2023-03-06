@@ -13,6 +13,7 @@ import MealTabs from './MealTabs/MealTabs'
 import Grid from './Grid/Grid'
 import SearchForm from './SearchForm/SearchForm'
 import Footer from './Footer/Footer'
+import ContactForm from './ContactForm/ContactForm'
 
 export {
   Nav,
@@ -29,5 +30,6 @@ export {
   MealTabs,
   Grid,
   SearchForm,
-  Footer
+  Footer,
+  ContactForm
 }
