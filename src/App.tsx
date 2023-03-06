@@ -11,6 +11,7 @@ import {
   BookmarkPage,
   Search
 } from 'pages/index'
+import PrivacyPolicy from 'pages/PrivacyPolicy/PrivacyPolicy'
 
 function App(): JSX.Element {
   return (
@@ -25,6 +26,7 @@ function App(): JSX.Element {
           <Route path="ingredients" element={<Ingredients />} />
           <Route path="bookmark" element={<BookmarkPage />} />
           <Route path="search" element={<Search />} />
+          <Route path="privacy" element={<PrivacyPolicy />} />
         </Route>
       </Routes>
     </BrowserRouter>

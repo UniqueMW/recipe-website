@@ -16,7 +16,7 @@ function Footer(): JSX.Element {
       <div className="flex flex-col justify-center space-y-4 w-full md:mt-0 mt-2">
         <div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0">
           <section className="flex flex-row w-full justify-center md:text-xl text-base font-sans space-x-10 items-center md:ml-10">
-            <Link to="about">About Me</Link>
+            {/* <Link to="about">About Me</Link> */}
             <Link to="contact">Contact Me</Link>
             <Link to="privacy">Privacy policy</Link>
           </section>
