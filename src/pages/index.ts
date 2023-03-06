@@ -7,6 +7,8 @@ import MealPage from './MealPage/MealPage'
 import Tutorial from './Tutorial/Tutorial'
 import BookmarkPage from './Bookmark/BookmarkPage'
 import Search from './Search/Search'
+import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
+import Contact from './Contact/Contact'
 
 export {
   Home,
@@ -17,5 +19,7 @@ export {
   MealPage,
   Tutorial,
   BookmarkPage,
-  Search
+  Search,
+  PrivacyPolicy,
+  Contact
 }
