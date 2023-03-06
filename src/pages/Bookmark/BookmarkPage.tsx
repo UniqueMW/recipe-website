@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Grid } from 'components'
+import emptyPlate from 'assets/cutlery13.jpg'
 import type { CardMeal } from 'types'
 // TODO handle empty bookmark
 function BookmarkPage(): JSX.Element {
@@ -23,7 +24,11 @@ function BookmarkPage(): JSX.Element {
       </section>
     )
   }
-  return <h1 className="mt-60 min-h-[100vh]">Empty</h1>
+  return (
+    <section className="min-h-[100vh] flex flex-col justify-center items-center">
+      <img src={emptyPlate} className="max-w-lg" />
+    </section>
+  )
 }
 
 export default BookmarkPage
