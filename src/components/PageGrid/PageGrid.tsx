@@ -4,7 +4,6 @@ import type { CardMeals } from 'types'
 import Grid from 'components/Grid/Grid'
 import Empty from 'components/Empty/Empty'
 
-// TODO add loading and null feature
 interface IPageGridProps {
   url: string
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { useFetch } from 'hooks'
-import type { Meals } from 'types'
+import handleBrokenImage from 'utils/handleBrokenImage/handleBrokenImage'
 import * as _ from 'lodash'
 import { GoLocation } from 'react-icons/go'
 import { Link } from 'react-router-dom'
@@ -8,10 +8,11 @@ import { BiCategory } from 'react-icons/bi'
 import Tag from 'components/Tag/Tag'
 import HeroPlaceholder from './HeroPlaceholder'
 
+import type { Meals } from 'types'
+
 function Hero(): JSX.Element {
   const url = 'https://www.themealdb.com/api/json/v1/1/random.php'
 
-  // TODO fix nested hub responsive design.
   const fetchedData = useFetch<Meals>(url)?.meals[0]
 
   // shortening random meal instruction to 300 words.
@@ -47,6 +48,7 @@ function Hero(): JSX.Element {
           </section>
           <img
             src={fetchedData.strMealThumb}
+            onError={handleBrokenImage}
             alt={fetchedData.strMeal}
             className="border border-gray-500 lg:border-l-0 lg:border-b border-b-0"
           />

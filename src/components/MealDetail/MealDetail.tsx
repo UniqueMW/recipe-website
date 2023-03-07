@@ -2,6 +2,7 @@ import { useFetch } from 'hooks'
 import * as React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import _ from 'lodash'
+import handleBrokenImage from 'utils/handleBrokenImage/handleBrokenImage'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import { FaCheck } from 'react-icons/fa'
 import type { Meal, Meals } from 'types'
@@ -12,8 +13,6 @@ import MealTabs from 'components/MealTabs/MealTabs'
  * problem:add meal to bookmark and change bookmark icon on added meal
  */
 
-// TODO add the border style tab you thought about.
-// TODO handle meals null
 function MealDetail(): JSX.Element {
   const [url, setUrl] = React.useState<string>()
   const [meal, setMeal] = React.useState<Meal>()
@@ -82,7 +81,7 @@ function MealDetail(): JSX.Element {
     return (
       <section className="md:px-12 px-1">
         <section className="flex xl:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
-          <img src={meal.strMealThumb} />
+          <img src={meal.strMealThumb} onError={handleBrokenImage} />
 
           <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">
             <h1 className="md:text-6xl text-3xl font-semibold tracking-wide text-center">

@@ -4,9 +4,6 @@ import user from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import SideMenu from './SideMenu'
 
-// TODO check if right props are passed.
-// TODO make a reusable render function for multiple test files.
-
 // let showMenu = true
 const setShowMenuSpy = jest.fn()
 

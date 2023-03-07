@@ -5,8 +5,6 @@ interface sideMenuProps {
   setShowMenu: (check: boolean) => void
 }
 
-// TODO add more stuff on the sideMenu eg stuff from the footer
-
 const SideMenu = React.forwardRef<HTMLDivElement, sideMenuProps>(function (
   props: sideMenuProps,
   ref

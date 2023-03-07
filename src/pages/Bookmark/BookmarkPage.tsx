@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Grid } from 'components'
 import emptyPlate from 'assets/cutlery13.jpg'
 import type { CardMeal } from 'types'
-// TODO handle empty bookmark
+
 function BookmarkPage(): JSX.Element {
   const [bookmarkedMeals, setBookmarkedMeal] = React.useState<CardMeal[]>()
 
