@@ -1,6 +1,7 @@
 import { useFetch } from 'hooks'
 import * as React from 'react'
 import { FaSearch } from 'react-icons/fa'
+
 import type { CardMeals } from 'types'
 
 interface ISearchFormProps {

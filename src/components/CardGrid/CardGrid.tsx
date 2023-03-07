@@ -2,9 +2,7 @@ import * as React from 'react'
 import { useFetch, useGridInfo } from 'hooks'
 
 import type { CardMeals } from 'types'
-import Grid from 'components/Grid/Grid'
-import Loading from 'components/Loading/Loading'
-
+import { Grid, Loading } from 'components'
 interface CardGridProps {
   gridContent: 'CATEGORY' | 'LOCATION' | 'INGREDIENT'
   url: string

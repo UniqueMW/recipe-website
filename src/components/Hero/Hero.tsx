@@ -1,12 +1,11 @@
 import * as React from 'react'
 import { useFetch } from 'hooks'
-import handleBrokenImage from 'utils/handleBrokenImage/handleBrokenImage'
 import * as _ from 'lodash'
 import { GoLocation } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import { BiCategory } from 'react-icons/bi'
-import Loading from 'components/Loading/Loading'
-import Tag from 'components/Tag/Tag'
+import { Loading, Tag } from 'components'
+import { handleBrokenImage } from 'utils'
 
 import type { Meals } from 'types'
 

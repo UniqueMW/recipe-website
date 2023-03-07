@@ -2,7 +2,7 @@ import * as React from 'react'
 import { IoFilterSharp } from 'react-icons/io5'
 import _ from 'lodash'
 import { useFetch } from 'hooks'
-import Loading from 'components/Loading/Loading'
+import { Loading } from 'components'
 
 import type { CategoryObject, LocationObject, IngredientObject } from 'types'
 

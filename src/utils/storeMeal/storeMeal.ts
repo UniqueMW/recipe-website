@@ -1,5 +1,3 @@
-// store meal to localStorage and check if meal is already stored
-
 import type { Meal } from 'types'
 
 function storeMeal(

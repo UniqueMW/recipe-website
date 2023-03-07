@@ -4,10 +4,10 @@ import { useParams, useNavigate } from 'react-router-dom'
 import _ from 'lodash'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import { FaCheck } from 'react-icons/fa'
-import type { Meal, Meals } from 'types'
 import { groupValues, storeMeal, handleBrokenImage } from 'utils'
-import MealTabs from 'components/MealTabs/MealTabs'
-import { Loading } from 'components'
+import { Loading, MealTabs } from 'components'
+
+import type { Meal, Meals } from 'types'
 
 /**
  * problem:add meal to bookmark and change bookmark icon on added meal

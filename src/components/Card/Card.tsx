@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import handleBrokenImage from 'utils/handleBrokenImage/handleBrokenImage'
+import { handleBrokenImage } from 'utils'
 
 interface CardProps {
   mealId: string

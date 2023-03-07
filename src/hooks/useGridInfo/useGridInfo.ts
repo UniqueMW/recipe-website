@@ -1,7 +1,7 @@
 import * as React from 'react'
-// import type { Category, CategoryObject } from 'types'
-import useFetch from 'hooks/useFetch/useFetch'
+import { useFetch } from 'hooks'
 import { randomizeSearch } from 'utils'
+
 import type {
   GridInfo,
   Category,
