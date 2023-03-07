@@ -2,6 +2,7 @@ import * as React from 'react'
 import { IoFilterSharp } from 'react-icons/io5'
 import _ from 'lodash'
 import { useFetch } from 'hooks'
+import Loading from 'components/Loading/Loading'
 
 import type { CategoryObject, LocationObject, IngredientObject } from 'types'
 
@@ -72,7 +73,7 @@ function Filter(props: IFilterProps): JSX.Element {
   }
 
   // return this if fetchedData is not available.
-  return <h1>Loading.....</h1>
+  return <Loading />
 }
 
 export default Filter

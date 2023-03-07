@@ -2,12 +2,12 @@ import { useFetch } from 'hooks'
 import * as React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import _ from 'lodash'
-import handleBrokenImage from 'utils/handleBrokenImage/handleBrokenImage'
 import { BsJournalBookmark, BsYoutube } from 'react-icons/bs'
 import { FaCheck } from 'react-icons/fa'
 import type { Meal, Meals } from 'types'
-import { groupValues, storeMeal } from 'utils'
+import { groupValues, storeMeal, handleBrokenImage } from 'utils'
 import MealTabs from 'components/MealTabs/MealTabs'
+import { Loading } from 'components'
 
 /**
  * problem:add meal to bookmark and change bookmark icon on added meal
@@ -120,7 +120,7 @@ function MealDetail(): JSX.Element {
     )
   }
   // return on loading the component
-  return <h1>Loading....</h1>
+  return <Loading />
 }
 
 export default MealDetail

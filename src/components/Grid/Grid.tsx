@@ -1,7 +1,7 @@
 import * as React from 'react'
 import _ from 'lodash'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Card, ErrorFallback } from 'components'
+import { Card, ErrorFallback, Loading } from 'components'
 import type { CardMeal } from 'types'
 
 interface GridProps {
@@ -43,7 +43,7 @@ function Grid(props: GridProps): JSX.Element {
     )
   } else {
     // handle the loading state of the component.
-    return <h1>Loading....</h1>
+    return <Loading />
   }
 }
 

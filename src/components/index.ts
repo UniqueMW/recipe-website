@@ -15,6 +15,7 @@ import SearchForm from './SearchForm/SearchForm'
 import Footer from './Footer/Footer'
 import ContactForm from './ContactForm/ContactForm'
 import Empty from './Empty/Empty'
+import Loading from './Loading/Loading'
 
 export {
   Nav,
@@ -33,5 +34,6 @@ export {
   SearchForm,
   Footer,
   ContactForm,
-  Empty
+  Empty,
+  Loading
 }

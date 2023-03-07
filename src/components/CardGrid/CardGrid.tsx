@@ -3,14 +3,13 @@ import { useFetch, useGridInfo } from 'hooks'
 
 import type { CardMeals } from 'types'
 import Grid from 'components/Grid/Grid'
+import Loading from 'components/Loading/Loading'
 
 interface CardGridProps {
   gridContent: 'CATEGORY' | 'LOCATION' | 'INGREDIENT'
   url: string
   amount: number
 }
-
-// TODO handle image fallback if image is not available.
 
 const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   // generate random data and url for cardGrid based on category,ingredient and location
@@ -31,7 +30,7 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
       />
     )
   } else {
-    return <h1>Loading......</h1>
+    return <Loading />
   }
 })
 

@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useFetch } from 'hooks'
 import type { CardMeals } from 'types'
-import Grid from 'components/Grid/Grid'
-import Empty from 'components/Empty/Empty'
+import { Loading, Grid, Empty } from 'components'
 
 interface IPageGridProps {
   url: string
@@ -24,7 +23,7 @@ function PageGrid(props: IPageGridProps): JSX.Element {
     )
   } else {
     // handle the loading state of the component.
-    return <h1>Loading....</h1>
+    return <Loading />
   }
 }
 

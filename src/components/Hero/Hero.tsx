@@ -5,8 +5,8 @@ import * as _ from 'lodash'
 import { GoLocation } from 'react-icons/go'
 import { Link } from 'react-router-dom'
 import { BiCategory } from 'react-icons/bi'
+import Loading from 'components/Loading/Loading'
 import Tag from 'components/Tag/Tag'
-import HeroPlaceholder from './HeroPlaceholder'
 
 import type { Meals } from 'types'
 
@@ -57,7 +57,7 @@ function Hero(): JSX.Element {
     )
   }
   // render this component when loading.
-  return <HeroPlaceholder />
+  return <Loading />
 }
 
 export default Hero
