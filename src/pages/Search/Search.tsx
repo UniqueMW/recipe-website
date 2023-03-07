@@ -1,7 +1,6 @@
 import * as React from 'react'
-import { Grid, SearchForm } from 'components'
+import { Empty, Grid, SearchForm } from 'components'
 import cooking from 'assets/drawkit-daily-life-vector-illustration-05.svg'
-import emptyPlate from 'assets/cutlery13.jpg'
 import type { CardMeals } from 'types'
 
 function Search(): JSX.Element {
@@ -9,7 +8,7 @@ function Search(): JSX.Element {
 
   const searchResults = React.useMemo(() => {
     if (fetchedData?.meals === null) {
-      return <img src={emptyPlate} className="max-w-lg" />
+      return <Empty />
     } else if (typeof fetchedData === 'undefined') {
       return <img src={cooking} className="max-w-lg" />
     }

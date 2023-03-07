@@ -14,6 +14,7 @@ import Grid from './Grid/Grid'
 import SearchForm from './SearchForm/SearchForm'
 import Footer from './Footer/Footer'
 import ContactForm from './ContactForm/ContactForm'
+import Empty from './Empty/Empty'
 
 export {
   Nav,
@@ -31,5 +32,6 @@ export {
   Grid,
   SearchForm,
   Footer,
-  ContactForm
+  ContactForm,
+  Empty
 }
