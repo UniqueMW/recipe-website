@@ -2,7 +2,7 @@ import React from 'react'
 import { IoMdRefresh } from 'react-icons/io'
 import errorImage from 'assets/error.svg'
 import type { FallbackProps } from 'react-error-boundary'
-// TODO finish the component.
+
 function ErrorFallback({ resetErrorBoundary }: FallbackProps): JSX.Element {
   return (
     <section className=" space-y-4 px-2 md:px-12 mt-4">

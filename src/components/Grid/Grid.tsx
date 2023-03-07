@@ -10,7 +10,6 @@ interface GridProps {
   fetchedData: CardMeal[]
 }
 
-// TODO handle {meals:null} eg made with powdered sugar
 function Grid(props: GridProps): JSX.Element {
   const dataArr = React.useMemo(() => {
     return _.take(props.fetchedData, props.amount)

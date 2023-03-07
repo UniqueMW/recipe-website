@@ -5,7 +5,6 @@ import { useFetch } from 'hooks'
 
 import type { CategoryObject, LocationObject, IngredientObject } from 'types'
 
-// TODO make filter more good looking.
 interface IFilterProps {
   url: string
   setOptionEntry: (entry: string) => void

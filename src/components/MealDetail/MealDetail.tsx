@@ -80,8 +80,8 @@ function MealDetail(): JSX.Element {
 
   if (typeof meal !== 'undefined') {
     return (
-      <section className="md:px-12 px-2">
-        <section className="flex md:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
+      <section className="md:px-12 px-1">
+        <section className="flex xl:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
           <img src={meal.strMealThumb} />
 
           <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">
@@ -89,16 +89,16 @@ function MealDetail(): JSX.Element {
               {meal.strMeal}
             </h1>
 
-            <div className="flex flex-row text-lg font-sans justify-evenly font-semibold tracking-wider">
+            <div className="grid grid-cols-2 gap-3 text-lg font-sans justify-items-center font-semibold tracking-wider">
               <button
-                className="py-3 md:px-16 px-6 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center"
+                className="py-3 2xl:px-16 md:px-8 px-3 bg-action text-base md:text-lg text-primary shadow-md tracking-wider flex flex-row items-center min-w-fit"
                 onClick={handleTutorial}
               >
                 <BsYoutube className="mr-2" />
                 Tutorial
               </button>
               <button
-                className="border-2 border-action md:px-16 px-6 shadow-sm py-3 text-base md:text-lg tracking-wider flex flex-row items-center"
+                className="border-2 border-action 2xl:px-16 md:px-8 px-2 shadow-sm py-3 text-base md:text-lg tracking-wider flex flex-row items-center min-w-fit"
                 onClick={handleBookmark}
               >
                 {isBookmarked ? (

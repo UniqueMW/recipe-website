@@ -2,19 +2,19 @@ import * as React from 'react'
 import { useFetch } from 'hooks'
 import type { CardMeals } from 'types'
 import Grid from 'components/Grid/Grid'
+import Empty from 'components/Empty/Empty'
 
 // TODO add loading and null feature
 interface IPageGridProps {
   url: string
 }
 
-// TODO handle null meals
 function PageGrid(props: IPageGridProps): JSX.Element {
   const fetchedData = useFetch<CardMeals>(props.url)
 
   if (typeof fetchedData !== 'undefined') {
     if (fetchedData.meals === null) {
-      return <h1 className="text-5xl">Empty</h1>
+      return <Empty />
     }
     return (
       <Grid
