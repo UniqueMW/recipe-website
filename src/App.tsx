@@ -14,6 +14,9 @@ import {
   Contact
 } from 'pages/index'
 
+// TODO add unit tests
+// TODO add active page feature
+// TODO add error boundaries
 function App(): JSX.Element {
   return (
     <BrowserRouter>
