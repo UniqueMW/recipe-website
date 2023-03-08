@@ -3,12 +3,13 @@ import { BsArrowRight } from 'react-icons/bs'
 // import contactUs from 'assets/undraw_contact_us_re_4qqt.svg'
 
 function ContactForm(): JSX.Element {
+  const formId = process.env.REACT_APP_FORM_ID
   return (
     <section className="flex flex-col items-center justify-center h-[100vh] px-2 md:px-12">
       {/* <img src={contactUs} /> */}
       <form
         className="flex flex-col md:text-lg text-base font-sans space-y-6 border shadow-sm px-2 min-w-[50%] text-black tracking-wider py-6"
-        action="https://formsubmit.co/575e880de8281fc430a1ab83acb52b7a"
+        action={`https://formsubmit.co/${formId !== undefined ? formId : ''}`}
         target="_blank"
         method="POST"
       >
