@@ -68,7 +68,9 @@
   },
   "jest": {
     "moduleNameMapper": {
-      "axios": "axios/dist/node/axios.cjs"
+      "axios": "axios/dist/node/axios.cjs",
+      "hooks":"hooks/index.ts",
+      "components":"components/index.ts"
     }
   }
 }

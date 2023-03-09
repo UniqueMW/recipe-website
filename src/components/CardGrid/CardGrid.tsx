@@ -18,7 +18,7 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
 
   if (fetchedData?.meals === null) {
     // return this component if meals is null or doesn't exist on the server
-    return <div>{null}</div>
+    return <div data-testid="empty">{null}</div>
   } else if (typeof fetchedData !== 'undefined') {
     return (
       <Grid

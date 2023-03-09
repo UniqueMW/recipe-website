@@ -65,7 +65,7 @@ export interface CardMeal {
 }
 
 export interface CardMeals {
-  meals: CardMeal[]
+  meals: CardMeal[] | null
 }
 
 export interface Category {
