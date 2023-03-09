@@ -17,6 +17,7 @@ import {
 // TODO add unit tests
 // TODO add active page feature
 // TODO add error boundaries
+// TODO Image loading fallback
 function App(): JSX.Element {
   return (
     <BrowserRouter>

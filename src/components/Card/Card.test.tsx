@@ -8,7 +8,7 @@ const testMeal = {
   img: 'https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg'
 }
 
-it.only('Should check if tag renders correctly.', () => {
+it('Should check if tag renders correctly.', () => {
   render(
     <Card img={testMeal.img} meal={testMeal.meal} mealId={testMeal.mealId} />
   )
