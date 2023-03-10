@@ -33,7 +33,9 @@ function Filter(props: IFilterProps): JSX.Element {
       return null
     })
 
-    setEntries(filterArray)
+    if (filterArray.length > 0) {
+      setEntries(filterArray)
+    }
   }, [fetchedData])
 
   // creating option element to be passed to the select element, by iterating entries.
@@ -51,10 +53,16 @@ function Filter(props: IFilterProps): JSX.Element {
   }
 
   // return the filter component if fetchedData is defined
-  if (typeof optionsArray !== 'undefined') {
+  if (
+    typeof optionsArray !== 'undefined' &&
+    typeof fetchedData !== 'undefined'
+  ) {
     return (
       <div className="px-2 md:px-12 mb-4 md:mb-6">
-        <form className="flex flex-row justify-between items-center pt-20">
+        <form
+          className="flex flex-row justify-between items-center pt-20"
+          role="form"
+        >
           <div className="flex flex-row max-w-fit items-center md:text-2xl text-xl font-sans font-semibold tracking-wider space-x-2">
             <h2>Catalog</h2>
             <IoFilterSharp />
@@ -62,6 +70,7 @@ function Filter(props: IFilterProps): JSX.Element {
 
           <select
             className="outline-none min-w-[15%] border-2 border-gray-500 p-2"
+            role="listbox"
             onChange={handleSelect}
             defaultValue={props.initial}
           >
