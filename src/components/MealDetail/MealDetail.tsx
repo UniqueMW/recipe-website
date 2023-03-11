@@ -23,6 +23,7 @@ function MealDetail(): JSX.Element {
   const { id } = useParams()
   const navigate = useNavigate()
 
+  // Check if a meal is bookmarked
   React.useEffect(() => {
     const getBookmarkedMeals = localStorage.getItem('uniqueMW_recipe_bookmark')
     if (typeof getBookmarkedMeals === 'string') {

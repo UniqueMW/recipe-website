@@ -13,11 +13,9 @@ const mockGridProps = {
   ]
 }
 
-jest.mock('components', () => {
-  return {
-    Card: () => <h1>grid card</h1>
-  }
-})
+jest.mock('components', () => ({
+  Card: () => <h1>grid card</h1>
+}))
 
 it('Should test if card are rendered.', () => {
   render(
