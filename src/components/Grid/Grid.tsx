@@ -1,7 +1,7 @@
 import * as React from 'react'
 import _ from 'lodash'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Card, ErrorFallback, Loading } from 'components'
+import { Card, ErrorFallback } from 'components'
 import type { CardMeal } from 'types'
 
 interface GridProps {
@@ -15,36 +15,27 @@ function Grid(props: GridProps): JSX.Element {
     return _.take(props.fetchedData, props.amount)
   }, [props.amount, props.fetchedData])
 
-  if (typeof dataArr !== 'undefined') {
-    // takes the first specified amount from fetched data array.
-    // generate an array of cards.
-    const cards = dataArr.map((meal) => (
-      <ErrorBoundary FallbackComponent={ErrorFallback} key={meal.idMeal}>
-        <Card
-          meal={meal.strMeal}
-          img={meal.strMealThumb}
-          mealId={meal.idMeal}
-        />
-      </ErrorBoundary>
-    ))
+  // takes the first specified amount from fetched data array.
+  // generate an array of cards.
+  const cards = dataArr.map((meal) => (
+    <ErrorBoundary FallbackComponent={ErrorFallback} key={meal.idMeal}>
+      <Card meal={meal.strMeal} img={meal.strMealThumb} mealId={meal.idMeal} />
+    </ErrorBoundary>
+  ))
 
-    // display the whole grid as required.
-    return (
-      <section className="flex flex-col md:px-10 px-2 space-y-4 mb-4 text-base md:text-xl font-sans font-normal md:font-normal tracking-wide">
-        {props.gridContent.length > 0 ? (
-          <h1 className="mt-10 text-xl md:text-2xl font-sans font-semibold border-b border-b-gray-500">
-            {props.gridContent}
-          </h1>
-        ) : null}
-        <section className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-flow-row gap-4">
-          {cards}
-        </section>
+  // display the whole grid as required.
+  return (
+    <section className="flex flex-col md:px-10 px-2 space-y-4 mb-4 text-base md:text-xl font-sans font-normal md:font-normal tracking-wide">
+      {props.gridContent.length > 0 ? (
+        <h1 className="mt-10 text-xl md:text-2xl font-sans font-semibold border-b border-b-gray-500">
+          {props.gridContent}
+        </h1>
+      ) : null}
+      <section className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-flow-row gap-4">
+        {cards}
       </section>
-    )
-  } else {
-    // handle the loading state of the component.
-    return <Loading />
-  }
+    </section>
+  )
 }
 
 export default Grid
