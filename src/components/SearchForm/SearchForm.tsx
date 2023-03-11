@@ -33,6 +33,7 @@ function SearchForm(props: ISearchFormProps): JSX.Element {
     <form
       className="flex flex-row py-4 px-3 border shadow-md md:space-x-3 space-x-1 justify-between font-sans md:text-lg text-base min-w-[45%]"
       onSubmit={handleSearch}
+      role="form"
     >
       <input
         type="text"
