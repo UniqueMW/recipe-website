@@ -27,10 +27,6 @@ jest.mock('components', () => ({
   Loading: () => <h1>Loading</h1>
 }))
 
-/**
- * if fetchedData is defined Test: Img, heading, tutorial and bookmark buttons and mealTab
- */
-
 it('Should check if component renders correct, if meal or fetched data is defined.', () => {
   render(
     <MemoryRouter>

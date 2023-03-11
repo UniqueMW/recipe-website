@@ -42,7 +42,9 @@ function MealTabs(props: IMealTabs): JSX.Element {
   const handleActiveTab = (
     event: React.MouseEvent<HTMLButtonElement>
   ): void => {
-    setActiveTab(event.currentTarget.innerText.toUpperCase())
+    if (event.currentTarget.textContent !== null) {
+      setActiveTab(event.currentTarget.textContent.toUpperCase())
+    }
   }
 
   return (
