@@ -10,7 +10,7 @@ function Search(): JSX.Element {
     if (fetchedData?.meals === null) {
       return <Empty />
     } else if (typeof fetchedData === 'undefined') {
-      return <img src={cooking} className="max-w-lg" />
+      return <img src={cooking} className="max-w-lg" alt="cooking" />
     }
     return (
       <Grid
