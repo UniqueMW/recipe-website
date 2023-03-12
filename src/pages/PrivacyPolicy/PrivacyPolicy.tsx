@@ -493,7 +493,7 @@ function PrivacyPolicy(): JSX.Element {
         posted on this page.
       </p>
       <h1>Contact Us</h1>
-      <p>
+      <p role="paragraph">
         If you have any questions about this Privacy Policy, You can contact us:
       </p>
       <ul>
