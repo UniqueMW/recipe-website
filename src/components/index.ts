@@ -16,6 +16,7 @@ import Footer from './Footer/Footer'
 import ContactForm from './ContactForm/ContactForm'
 import Empty from './Empty/Empty'
 import Loading from './Loading/Loading'
+import PageNotFound from './PageNotFound/PageNotFound'
 
 export {
   Nav,
@@ -35,5 +36,6 @@ export {
   Footer,
   ContactForm,
   Empty,
-  Loading
+  Loading,
+  PageNotFound
 }
