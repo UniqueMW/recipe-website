@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { Grid } from 'components'
-import emptyPlate from 'assets/cutlery13.jpg'
+import { Grid, Empty } from 'components'
 import type { CardMeal } from 'types'
 
 function BookmarkPage(): JSX.Element {
@@ -8,6 +7,7 @@ function BookmarkPage(): JSX.Element {
 
   React.useEffect(() => {
     const meals = localStorage.getItem('uniqueMW_recipe_bookmark')
+    console.log(meals)
     if (typeof meals === 'string') {
       setBookmarkedMeal(JSON.parse(meals))
     }
@@ -26,7 +26,7 @@ function BookmarkPage(): JSX.Element {
   }
   return (
     <section className="min-h-[100vh] flex flex-col justify-center items-center">
-      <img src={emptyPlate} className="max-w-lg" />
+      <Empty />
     </section>
   )
 }
