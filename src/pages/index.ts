@@ -9,6 +9,7 @@ import BookmarkPage from './Bookmark/BookmarkPage'
 import Search from './Search/Search'
 import PrivacyPolicy from './PrivacyPolicy/PrivacyPolicy'
 import Contact from './Contact/Contact'
+import Page404 from './Page404/Page404'
 
 export {
   Home,
@@ -21,5 +22,6 @@ export {
   BookmarkPage,
   Search,
   PrivacyPolicy,
-  Contact
+  Contact,
+  Page404
 }
