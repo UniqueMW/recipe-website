@@ -1,6 +1,6 @@
 import { rest } from 'msw'
 import { setupServer } from 'msw/node'
-import { renderHook } from '@testing-library/react-hooks'
+import { renderHook, waitFor } from '@testing-library/react'
 import useFetch from './useFetch'
 import type { Meals } from 'types'
 
@@ -27,10 +27,10 @@ afterAll(() => {
 })
 
 it('Should check if useFetch hook makes a request.', async () => {
-  const { result, waitForNextUpdate } = renderHook(() => useFetch<Meals>(url))
+  const { result } = renderHook(() => useFetch<Meals>(url))
 
-  await waitForNextUpdate()
-
-  expect(result.current?.meals[0].idMeal).toBe('52866')
-  expect(result.current?.meals[0].strMeal).toBe('Squash linguine')
+  await waitFor(() => {
+    expect(result.current?.meals[0].idMeal).toBe('52866')
+    expect(result.current?.meals[0].strMeal).toBe('Squash linguine')
+  })
 })
