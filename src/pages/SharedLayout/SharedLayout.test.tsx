@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { render, screen } from '@testing-library/react'
 import SharedLayout from './SharedLayout'
 
@@ -17,6 +17,7 @@ jest.mock('components', () => ({
 jest.mock('gsap')
 
 it('Should render all the components.', () => {
+  jest.spyOn(React, 'useRef').mockImplementation(() => ({ current: 'test' }))
   render(<SharedLayout />)
 
   const navComponent = screen.getByRole('heading', { name: /nav pc/i })

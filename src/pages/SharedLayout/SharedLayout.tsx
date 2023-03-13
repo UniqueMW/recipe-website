@@ -20,7 +20,7 @@ function SharedLayout(): JSX.Element {
     <>
       <Nav />
       <MobileNav setShowMenu={setShowMenu} />
-      <SideMenu ref={sideMenuRef} setShowMenu={setShowMenu} />
+      <SideMenu refs={sideMenuRef} setShowMenu={setShowMenu} />
       <Outlet />
       <Footer />
     </>
