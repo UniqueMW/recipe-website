@@ -1,10 +1,13 @@
 import React from 'react'
-import { MealDetail } from 'components'
+import { ErrorFallback, MealDetail } from 'components'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function MealPage(): JSX.Element {
   return (
     <section className="min-h-[100vh]">
-      <MealDetail />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <MealDetail />
+      </ErrorBoundary>
     </section>
   )
 }

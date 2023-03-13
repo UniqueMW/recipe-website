@@ -1,5 +1,6 @@
 import * as React from 'react'
-import { Grid, Empty } from 'components'
+import { Grid, Empty, ErrorFallback } from 'components'
+import { ErrorBoundary } from 'react-error-boundary'
 import type { CardMeal } from 'types'
 
 function BookmarkPage(): JSX.Element {
@@ -16,11 +17,13 @@ function BookmarkPage(): JSX.Element {
   if (typeof bookmarkedMeals !== 'undefined' && bookmarkedMeals.length > 0) {
     return (
       <section className="py-10 min-h-[100vh]">
-        <Grid
-          gridContent="Bookmarked"
-          amount={bookmarkedMeals.length}
-          fetchedData={bookmarkedMeals}
-        />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Grid
+            gridContent="Bookmarked"
+            amount={bookmarkedMeals.length}
+            fetchedData={bookmarkedMeals}
+          />
+        </ErrorBoundary>
       </section>
     )
   }

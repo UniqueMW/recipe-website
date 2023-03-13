@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { Empty, Grid, SearchForm } from 'components'
+import { Empty, ErrorFallback, Grid, SearchForm } from 'components'
 import cooking from 'assets/drawkit-daily-life-vector-illustration-05.svg'
 import type { CardMeals } from 'types'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function Search(): JSX.Element {
   const [fetchedData, setFetchedData] = React.useState<CardMeals>()
@@ -13,11 +14,13 @@ function Search(): JSX.Element {
       return <img src={cooking} className="max-w-lg" alt="cooking" />
     }
     return (
-      <Grid
-        fetchedData={fetchedData?.meals}
-        gridContent="Search Results:"
-        amount={fetchedData?.meals.length}
-      />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Grid
+          fetchedData={fetchedData?.meals}
+          gridContent="Search Results:"
+          amount={fetchedData?.meals.length}
+        />
+      </ErrorBoundary>
     )
   }, [fetchedData])
 
@@ -27,7 +30,9 @@ function Search(): JSX.Element {
         Find your next{' '}
         <b className="font-sans text-secondary">cooking recipe</b>
       </h1>
-      <SearchForm setFetchedData={setFetchedData} />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <SearchForm setFetchedData={setFetchedData} />
+      </ErrorBoundary>
 
       {searchResults}
     </section>

@@ -1,5 +1,6 @@
-import { Filter, PageGrid } from 'components'
+import { ErrorFallback, Filter, PageGrid } from 'components'
 import React from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function Location(): JSX.Element {
   const initial = 'American'
@@ -19,13 +20,18 @@ function Location(): JSX.Element {
 
   return (
     <section className="min-h-[100vh]">
-      <Filter
-        url={locationListUrl}
-        initial={initial}
-        setOptionEntry={setOptionEntry}
-        valueKey="strArea"
-      />
-      <PageGrid url={locationUrl} />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Filter
+          url={locationListUrl}
+          initial={initial}
+          setOptionEntry={setOptionEntry}
+          valueKey="strArea"
+        />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <PageGrid url={locationUrl} />
+      </ErrorBoundary>
     </section>
   )
 }

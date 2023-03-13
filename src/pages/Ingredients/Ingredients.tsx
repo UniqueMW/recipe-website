@@ -1,5 +1,6 @@
-import { Filter, PageGrid } from 'components'
+import { ErrorFallback, Filter, PageGrid } from 'components'
 import React from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 
 function Ingredients(): JSX.Element {
   const initial = 'Chicken'
@@ -19,13 +20,18 @@ function Ingredients(): JSX.Element {
 
   return (
     <section className="min-h-[100vh]">
-      <Filter
-        url={ingredientsListUrl}
-        initial={initial}
-        setOptionEntry={setOptionEntry}
-        valueKey="strIngredient"
-      />
-      <PageGrid url={ingredientsUrl} />
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <Filter
+          url={ingredientsListUrl}
+          initial={initial}
+          setOptionEntry={setOptionEntry}
+          valueKey="strIngredient"
+        />
+      </ErrorBoundary>
+
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <PageGrid url={ingredientsUrl} />
+      </ErrorBoundary>
     </section>
   )
 }
