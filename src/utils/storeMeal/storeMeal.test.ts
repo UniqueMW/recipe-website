@@ -52,7 +52,6 @@ it('Check if meal is removed from the localStorage if it was already in the loca
 
 it('Should add a meal to the localStorage if the meal was not in the localStorage.', () => {
   mockedGetItemReturnValue = JSON.stringify([meal])
-  console.log(mockedGetItemReturnValue)
   const results = storeMeal(mealAlt, 'testing')
 
   expect(results).toBe(true)

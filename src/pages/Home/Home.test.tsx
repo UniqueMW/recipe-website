@@ -2,11 +2,8 @@ import React from 'react'
 import { screen, render } from '@testing-library/react'
 import Home from './Home'
 
-let mockedCardGridValue: JSX.Element | Error = <h1>Card grid</h1>
-
 jest.mock('components', () => ({
-  CardGrid: () => mockedCardGridValue,
-  ErrorFallback: () => <h1>Error fallback</h1>,
+  CardGrid: () => <h1>Card grid</h1>,
   Hero: () => <h1>Hero</h1>
 }))
 
@@ -18,15 +15,4 @@ it('Should test if CardGrid and Hero components are rendered.', () => {
 
   expect(cardGrid.length).toBeGreaterThan(0)
   expect(hero).toBeInTheDocument()
-})
-
-it('Should render an error fallback, if component throws an error.', () => {
-  mockedCardGridValue = Error('testing')
-  render(<Home />)
-
-  const errorFallback = screen.getAllByRole('heading', {
-    name: /Error fallback/i
-  })
-
-  expect(errorFallback.length).toBeGreaterThan(0)
 })

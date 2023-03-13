@@ -16,7 +16,6 @@ import {
 } from 'pages/index'
 
 // TODO add active page feature
-// TODO add error boundaries
 function App(): JSX.Element {
   return (
     <BrowserRouter>

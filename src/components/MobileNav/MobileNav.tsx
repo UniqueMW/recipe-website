@@ -11,7 +11,7 @@ function MobileNav(props: MobileNavProps): JSX.Element {
   }
 
   return (
-    <nav className="flex flex-row justify-between content-center py-4 px-2 shadow-md font-sans text-lg md:hidden fixed bg-primary min-w-full z-10 top-0 left-0">
+    <nav className="flex flex-row justify-between content-center py-4 px-2 shadow-md font-sans text-lg lg:hidden w-full fixed bg-primary z-10 top-0 left-0">
       <button className="text-lg" onClick={handleDisplayMenu}>
         <GiHamburgerMenu />
       </button>

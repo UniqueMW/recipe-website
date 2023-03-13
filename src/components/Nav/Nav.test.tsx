@@ -30,5 +30,5 @@ it('Should check if all links are rendered.', () => {
   expect(bookmark).toBeInTheDocument()
 
   // assertion for the number of links present.
-  expect(links).toHaveLength(6)
+  expect(links).toHaveLength(8)
 })

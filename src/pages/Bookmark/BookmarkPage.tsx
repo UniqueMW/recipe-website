@@ -8,7 +8,6 @@ function BookmarkPage(): JSX.Element {
 
   React.useEffect(() => {
     const meals = localStorage.getItem('uniqueMW_recipe_bookmark')
-    console.log(meals)
     if (typeof meals === 'string') {
       setBookmarkedMeal(JSON.parse(meals))
     }

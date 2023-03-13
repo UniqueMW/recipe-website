@@ -10,7 +10,7 @@ const setShowMenuSpy = jest.fn()
 function renderComponent(): void {
   render(
     <MemoryRouter>
-      <SideMenu setShowMenu={setShowMenuSpy} />
+      <SideMenu setShowMenu={setShowMenuSpy} refs={null} />
     </MemoryRouter>
   )
 }
@@ -28,7 +28,7 @@ it('Should render SideMenu.', () => {
   expect(ingredients).toBeInTheDocument()
   expect(location).toBeInTheDocument()
 
-  expect(links).toHaveLength(4)
+  expect(links).toHaveLength(6)
 })
 
 it('Should check if showMenu state is working.', () => {
