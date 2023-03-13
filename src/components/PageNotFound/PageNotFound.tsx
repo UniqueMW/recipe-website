@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { RiArrowGoBackFill } from 'react-icons/ri'
-import Image404 from 'assets/Image404.svg'
+import Image404 from 'assets/404.svg'
 
 function PageNotFound(): JSX.Element {
   const navigate = useNavigate()
@@ -11,11 +11,7 @@ function PageNotFound(): JSX.Element {
 
   return (
     <section className="md:px-12 px-2 flex flex-col justify-center items-center py-20 space-y-6">
-      <img
-        src={Image404}
-        alt="Page not found"
-        className="md:max-w-sm max-w-[15rem]"
-      />
+      <img src={Image404} alt="Page not found" className="max-w-4xl" />
       <h1 className="md:text-2xl text-lg tracking-wider font-sans font-semibold text-center">
         We couldn&#39;t find the page you were looking for....
       </h1>
@@ -24,7 +20,7 @@ function PageNotFound(): JSX.Element {
         onClick={handleGoingBack}
       >
         <RiArrowGoBackFill className="mr-2" />
-        Back Home
+        Go Back Home
       </button>
     </section>
   )
