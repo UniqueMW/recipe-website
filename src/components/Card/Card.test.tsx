@@ -1,5 +1,6 @@
 import React from 'react'
 import { render, screen } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 import Card from './Card'
 
 const testMeal = {
@@ -8,9 +9,11 @@ const testMeal = {
   img: 'https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg'
 }
 
-it('Should check if tag renders correctly.', () => {
+it('Should check if img and h1 render .', () => {
   render(
-    <Card img={testMeal.img} meal={testMeal.meal} mealId={testMeal.mealId} />
+    <MemoryRouter>
+      <Card img={testMeal.img} meal={testMeal.meal} mealId={testMeal.mealId} />
+    </MemoryRouter>
   )
 
   const img = screen.getByRole('img')
