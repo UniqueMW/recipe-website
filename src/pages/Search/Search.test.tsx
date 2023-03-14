@@ -5,7 +5,8 @@ import Search from './Search'
 jest.mock('components', () => ({
   Empty: () => <h1>Empty</h1>,
   SearchForm: () => <h1>search form</h1>,
-  Grid: () => <h1>grid</h1>
+  Grid: () => <h1>grid</h1>,
+  SEO: () => <h1>seo</h1>
 }))
 
 let mockedFetchedData: undefined | { meals: string | null } = { meals: null }
@@ -21,10 +22,12 @@ it('Should render empty component if fetchedData.meals is null', () => {
   const searchHeading = screen.getByRole('heading', {
     name: /find your next cooking recipe/i
   })
+  const seoComponent = screen.getByRole('heading', { name: /seo/i })
 
   expect(emptyComponent).toBeInTheDocument()
   expect(searchForm).toBeInTheDocument()
   expect(searchHeading).toBeInTheDocument()
+  expect(seoComponent).toBeInTheDocument()
 })
 
 it('Should render cooking image if fetchedData is undefined', () => {
@@ -38,10 +41,12 @@ it('Should render cooking image if fetchedData is undefined', () => {
     name: /find your next cooking recipe/i
   })
   const cookingImage = screen.getByAltText(/cooking/i)
+  const seoComponent = screen.getByRole('heading', { name: /seo/i })
 
   expect(searchForm).toBeInTheDocument()
   expect(searchHeading).toBeInTheDocument()
   expect(cookingImage).toBeInTheDocument()
+  expect(seoComponent).toBeInTheDocument()
 })
 
 it('Should render grid component if fetchedData is defined.', () => {
@@ -55,8 +60,10 @@ it('Should render grid component if fetchedData is defined.', () => {
     name: /find your next cooking recipe/i
   })
   const gridComponent = screen.getByRole('heading', { name: /grid/i })
+  const seoComponent = screen.getByRole('heading', { name: /seo/i })
 
   expect(searchForm).toBeInTheDocument()
   expect(searchHeading).toBeInTheDocument()
   expect(gridComponent).toBeInTheDocument()
+  expect(seoComponent).toBeInTheDocument()
 })

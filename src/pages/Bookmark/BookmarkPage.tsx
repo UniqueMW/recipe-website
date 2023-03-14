@@ -30,9 +30,12 @@ function BookmarkPage(): JSX.Element {
     )
   }
   return (
-    <section className="min-h-[100vh] flex flex-col justify-center items-center">
-      <Empty />
-    </section>
+    <>
+      <SEO title="Bookmark" description="A list of recipes you bookmarked" />
+      <section className="min-h-[100vh] flex flex-col justify-center items-center">
+        <Empty />
+      </section>
+    </>
   )
 }
 
