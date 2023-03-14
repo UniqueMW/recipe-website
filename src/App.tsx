@@ -15,7 +15,6 @@ import {
   Page404
 } from 'pages/index'
 
-// TODO add active page feature
 function App(): JSX.Element {
   return (
     <BrowserRouter>

@@ -82,7 +82,11 @@ function MealDetail(): JSX.Element {
     return (
       <section className="md:px-12 px-1">
         <section className="flex xl:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
-          <img src={meal.strMealThumb} onError={handleBrokenImage} />
+          <img
+            src={meal.strMealThumb}
+            onError={handleBrokenImage}
+            alt={meal.strMeal}
+          />
 
           <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">
             <h1 className="md:text-6xl text-3xl font-semibold tracking-wide text-center">
