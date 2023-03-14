@@ -11,10 +11,13 @@ it('Should check if all links are rendered.', () => {
   )
 
   // gets all links based on accessible name.
-  const home = screen.getByRole('link', { name: /uniquemw/i })
+  const logo = screen.getByRole('link', { name: /uniquemw/i })
   const category = screen.getByRole('link', { name: /category/i })
   const ingredients = screen.getByRole('link', { name: /ingredients/i })
   const location = screen.getByRole('link', { name: /location/i })
+  const home = screen.getByRole('link', { name: /home/i })
+  const contactMe = screen.getByRole('link', { name: /contact me/i })
+
   const search = screen.getByTestId(/search/i)
   const bookmark = screen.getByTestId(/bookmark/i)
 
@@ -28,6 +31,8 @@ it('Should check if all links are rendered.', () => {
   expect(location).toBeInTheDocument()
   expect(search).toBeInTheDocument()
   expect(bookmark).toBeInTheDocument()
+  expect(contactMe).toBeInTheDocument()
+  expect(logo).toBeInTheDocument()
 
   // assertion for the number of links present.
   expect(links).toHaveLength(8)
