@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { RxCross2 } from 'react-icons/rx'
 interface sideMenuProps {
   setShowMenu: (check: boolean) => void
@@ -7,6 +7,7 @@ interface sideMenuProps {
 }
 
 function SideMenu(props: sideMenuProps): JSX.Element {
+  const { pathname } = useLocation()
   const handleHideMenu = (): void => {
     props.setShowMenu(false)
   }
@@ -25,11 +26,44 @@ function SideMenu(props: sideMenuProps): JSX.Element {
           </button>
         </div>
         <div className="flex flex-col space-y-4">
-          <Link to="/">Home</Link>
-          <Link to="/category">Category</Link>
-          <Link to="/location">Location</Link>
-          <Link to="/ingredients">Ingredients</Link>
-          <Link to="/contact">Contact Me</Link>
+          <Link
+            to="/"
+            className={`${pathname === '/' ? 'text-action' : 'text-black'}`}
+          >
+            Home
+          </Link>
+          <Link
+            to="/category"
+            className={`${
+              pathname === '/category' ? 'text-action' : 'text-black'
+            }`}
+          >
+            Category
+          </Link>
+          <Link
+            to="/location"
+            className={`${
+              pathname === '/location' ? 'text-action' : 'text-black'
+            }`}
+          >
+            Location
+          </Link>
+          <Link
+            to="/ingredients"
+            className={`${
+              pathname === '/ingredients' ? 'text-action' : 'text-black'
+            }`}
+          >
+            Ingredients
+          </Link>
+          <Link
+            to="/contact"
+            className={`${
+              pathname === '/contact' ? 'text-action' : 'text-black'
+            }`}
+          >
+            Contact Me
+          </Link>
         </div>
       </section>
 

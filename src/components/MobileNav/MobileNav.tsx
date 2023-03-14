@@ -1,11 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { FaSearch, FaRegBookmark } from 'react-icons/fa'
 import { GiHamburgerMenu } from 'react-icons/gi'
 interface MobileNavProps {
   setShowMenu: (check: boolean) => void
 }
 function MobileNav(props: MobileNavProps): JSX.Element {
+  const { pathname } = useLocation()
   const handleDisplayMenu = (): void => {
     props.setShowMenu(true)
   }
@@ -21,10 +22,20 @@ function MobileNav(props: MobileNavProps): JSX.Element {
       </Link>
 
       <section className="flex flex-row space-x-6 content-center text-lg">
-        <Link to="/bookmark" data-testid="bookmark">
+        <Link
+          to="/bookmark"
+          data-testid="bookmark"
+          className={`${
+            pathname === '/bookmark' ? 'text-action' : 'text-black'
+          }`}
+        >
           <FaRegBookmark />
         </Link>
-        <Link to="/search" data-testid="search">
+        <Link
+          to="/search"
+          data-testid="search"
+          className={`${pathname === '/search' ? 'text-action' : 'text-black'}`}
+        >
           <FaSearch className="text-xl" />
         </Link>
       </section>
