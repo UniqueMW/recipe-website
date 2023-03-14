@@ -9,7 +9,11 @@ function Tutorial(): JSX.Element {
   const id = _.trim(videoId, ':')
   return (
     <>
-      <SEO title="Tutorial" description="Watch how to make a meal." />
+      <SEO
+        title="Tutorial"
+        description="Watch how to make a meal."
+        route="/tutorial/:videoId"
+      />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <section className="flex flex-col justify-center items-center md:px-12 px-2 pt-16 md:pt-20">
           <iframe

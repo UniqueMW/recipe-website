@@ -18,6 +18,7 @@ function Home(): JSX.Element {
       <SEO
         title="UniqueMW Recipes"
         description="Explore and learn how to cook food based on different recipes a cross the world."
+        route="/"
       />
       <section className="min-h-[100vh]">
         <ErrorBoundary FallbackComponent={ErrorFallback}>

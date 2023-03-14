@@ -7,6 +7,7 @@ function Contact(): JSX.Element {
       <SEO
         title="contact me"
         description="Get in touch with the developer of this webapp."
+        route="/contact"
       />
       <section className="min-h-[100vh]">
         <ContactForm />

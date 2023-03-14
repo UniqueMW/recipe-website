@@ -89,6 +89,7 @@ function MealDetail(props: IMealDetailProps): JSX.Element {
             src={meal.strMealThumb}
             onError={handleBrokenImage}
             alt={meal.strMeal}
+            title={meal.strMeal}
           />
 
           <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">

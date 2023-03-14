@@ -7,6 +7,7 @@ function PrivacyPolicy(): JSX.Element {
       <SEO
         title="Privacy Policy"
         description="Learn more about our privacy policy"
+        route="/privacy"
       />
       <section className="md:text-lg text-base font-sans px-2 md:px-12 mt-20">
         <h1>Privacy Policy</h1>

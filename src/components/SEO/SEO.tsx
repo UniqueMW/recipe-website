@@ -4,16 +4,19 @@ import { Helmet } from 'react-helmet-async'
 interface ISEOProps {
   title: string | undefined
   description: string
+  route: string
 }
 
 function SEO({
   title = 'UniqueMW Recipe',
-  description
+  description,
+  route
 }: ISEOProps): JSX.Element {
   return (
     <Helmet>
       {/* Standard metadata tags */}
       <title>{title}</title>
+      <link rel="canonical" href={route} />
       <meta name="description" content={description} />
       {/* End standard metadata tags */}
       {/* Facebook tags */}

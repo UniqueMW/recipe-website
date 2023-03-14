@@ -15,7 +15,12 @@ function Card(props: CardProps): JSX.Element {
       className="space-y-3 border border-gray-500 min-h-full"
     >
       <section className="flex flex-col ">
-        <img src={props.img} alt={props.meal} onError={handleBrokenImage} />
+        <img
+          src={props.img}
+          alt={props.meal}
+          onError={handleBrokenImage}
+          title={props.meal}
+        />
         <h1 className="md:text-xl text-base tracking-wider font-sans px-1">
           {props.meal}
         </h1>

@@ -26,7 +26,11 @@ function Search(): JSX.Element {
 
   return (
     <>
-      <SEO title="search" description="Search different meal recipes." />
+      <SEO
+        title="search"
+        description="Search different meal recipes."
+        route="/search"
+      />
       <section className="flex flex-col md:px-12 px-2 py-20 md:items-center md:space-y-14 space-y-10 min-h-[100vh]">
         <h1 className="md:text-5xl text-2xl text-center tracking-wider font-sans font-semibold">
           Find your next{' '}

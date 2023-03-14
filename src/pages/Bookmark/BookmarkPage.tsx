@@ -16,7 +16,11 @@ function BookmarkPage(): JSX.Element {
   if (typeof bookmarkedMeals !== 'undefined' && bookmarkedMeals.length > 0) {
     return (
       <>
-        <SEO title="Bookmark" description="A list of recipes you bookmarked" />
+        <SEO
+          title="Bookmark"
+          description="A list of recipes you bookmarked"
+          route="/bookmark"
+        />
         <section className="py-10 min-h-[100vh]">
           <ErrorBoundary FallbackComponent={ErrorFallback}>
             <Grid
@@ -31,7 +35,11 @@ function BookmarkPage(): JSX.Element {
   }
   return (
     <>
-      <SEO title="Bookmark" description="A list of recipes you bookmarked" />
+      <SEO
+        title="Bookmark"
+        description="A list of recipes you bookmarked"
+        route="/bookmark"
+      />
       <section className="min-h-[100vh] flex flex-col justify-center items-center">
         <Empty />
       </section>

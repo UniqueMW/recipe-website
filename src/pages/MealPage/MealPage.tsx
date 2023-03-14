@@ -9,6 +9,7 @@ function MealPage(): JSX.Element {
       <SEO
         title={mealTitle}
         description="Bookmark ,watch and learn how to make a meal. "
+        route="/meal/:id"
       />
       <section className="min-h-[100vh]">
         <ErrorBoundary FallbackComponent={ErrorFallback}>

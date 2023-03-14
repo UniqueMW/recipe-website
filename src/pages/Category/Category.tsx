@@ -23,6 +23,7 @@ function Category(): JSX.Element {
       <SEO
         title="category"
         description="A group of recipes based on category e.g breakfast, supper and dinner."
+        route="/category"
       />
       <section className="min-h-[100vh]">
         <ErrorBoundary FallbackComponent={ErrorFallback}>

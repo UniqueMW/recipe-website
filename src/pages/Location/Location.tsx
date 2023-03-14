@@ -23,6 +23,7 @@ function Location(): JSX.Element {
       <SEO
         title="Location"
         description="Learn how to make a variety of food from different parts of the world."
+        route="/location"
       />
       <section className="min-h-[100vh]">
         <ErrorBoundary FallbackComponent={ErrorFallback}>

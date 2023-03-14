@@ -23,6 +23,7 @@ function Ingredients(): JSX.Element {
       <SEO
         title="Ingredients"
         description="Explore different food across the world based on their ingredients."
+        route="/ingredients"
       />
       <section className="min-h-[100vh]">
         <ErrorBoundary FallbackComponent={ErrorFallback}>

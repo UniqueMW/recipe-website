@@ -50,6 +50,7 @@ function Hero(): JSX.Element {
             onError={handleBrokenImage}
             alt={fetchedData.strMeal}
             className="border border-gray-500 lg:border-l-0 lg:border-b border-b-0"
+            title={fetchedData.strMeal}
           />
         </section>
       </Link>
