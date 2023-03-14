@@ -1,4 +1,4 @@
-import { ErrorFallback, Filter, PageGrid } from 'components'
+import { ErrorFallback, Filter, PageGrid, SEO } from 'components'
 import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 
@@ -19,20 +19,26 @@ function Category(): JSX.Element {
   }, [optionEntry])
 
   return (
-    <section className="min-h-[100vh]">
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Filter
-          url={categoryListUrl}
-          initial={initial}
-          setOptionEntry={setOptionEntry}
-          valueKey="strCategory"
-        />
-      </ErrorBoundary>
+    <>
+      <SEO
+        title="category"
+        description="A group of recipes based on category e.g breakfast, supper and dinner."
+      />
+      <section className="min-h-[100vh]">
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Filter
+            url={categoryListUrl}
+            initial={initial}
+            setOptionEntry={setOptionEntry}
+            valueKey="strCategory"
+          />
+        </ErrorBoundary>
 
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <PageGrid url={categoryUrl} />
-      </ErrorBoundary>
-    </section>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <PageGrid url={categoryUrl} />
+        </ErrorBoundary>
+      </section>
+    </>
   )
 }
 

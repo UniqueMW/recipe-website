@@ -1,11 +1,17 @@
-import { ContactForm } from 'components'
+import { ContactForm, SEO } from 'components'
 import * as React from 'react'
 
 function Contact(): JSX.Element {
   return (
-    <section className="min-h-[100vh]">
-      <ContactForm />
-    </section>
+    <>
+      <SEO
+        title="contact me"
+        description="Get in touch with the developer of this webapp."
+      />
+      <section className="min-h-[100vh]">
+        <ContactForm />
+      </section>
+    </>
   )
 }
 

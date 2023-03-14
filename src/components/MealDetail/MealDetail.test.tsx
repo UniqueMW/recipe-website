@@ -27,10 +27,12 @@ jest.mock('components', () => ({
   Loading: () => <h1>Loading</h1>
 }))
 
+const setMealTitleMock = jest.fn()
+
 it('Should check if component renders correct, if meal or fetched data is defined.', () => {
   render(
     <MemoryRouter>
-      <MealDetail />
+      <MealDetail setMealTitle={setMealTitleMock} />
     </MemoryRouter>
   )
 
@@ -45,13 +47,14 @@ it('Should check if component renders correct, if meal or fetched data is define
   expect(tutorialButton).toBeInTheDocument()
   expect(bookmarkButton).toBeInTheDocument()
   expect(mealTabs).toBeInTheDocument()
+  expect(setMealTitleMock).toBeCalled()
 })
 
 it('Should check how components render, if meal or fetched data is undefined.', () => {
   mockFetchedData = undefined
   render(
     <MemoryRouter>
-      <MealDetail />
+      <MealDetail setMealTitle={setMealTitleMock} />
     </MemoryRouter>
   )
 

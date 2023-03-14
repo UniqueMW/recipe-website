@@ -17,6 +17,7 @@ import ContactForm from './ContactForm/ContactForm'
 import Empty from './Empty/Empty'
 import Loading from './Loading/Loading'
 import PageNotFound from './PageNotFound/PageNotFound'
+import SEO from './SEO/SEO'
 
 export {
   Nav,
@@ -37,5 +38,6 @@ export {
   ContactForm,
   Empty,
   Loading,
-  PageNotFound
+  PageNotFound,
+  SEO
 }

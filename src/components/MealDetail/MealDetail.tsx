@@ -9,11 +9,11 @@ import { Loading, MealTabs } from 'components'
 
 import type { Meal, Meals } from 'types'
 
-/**
- * problem:add meal to bookmark and change bookmark icon on added meal
- */
+interface IMealDetailProps {
+  setMealTitle: (mealName: string) => void
+}
 
-function MealDetail(): JSX.Element {
+function MealDetail(props: IMealDetailProps): JSX.Element {
   const [url, setUrl] = React.useState<string>()
   const [meal, setMeal] = React.useState<Meal>()
   const [isBookmarked, setIsBookmarked] = React.useState<boolean>(false)
@@ -51,6 +51,9 @@ function MealDetail(): JSX.Element {
   React.useEffect(() => {
     if (typeof fetchedData !== 'undefined' && fetchedData.meals !== null) {
       setMeal(fetchedData.meals[0])
+
+      // sets the title of the page.
+      props.setMealTitle(fetchedData.meals[0].strMeal)
 
       // create a list of ingredients values.
       const ingredientsValues = groupValues(

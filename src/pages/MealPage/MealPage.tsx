@@ -1,14 +1,21 @@
 import React from 'react'
-import { ErrorFallback, MealDetail } from 'components'
+import { ErrorFallback, MealDetail, SEO } from 'components'
 import { ErrorBoundary } from 'react-error-boundary'
 
 function MealPage(): JSX.Element {
+  const [mealTitle, setMealTitle] = React.useState<string>()
   return (
-    <section className="min-h-[100vh]">
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <MealDetail />
-      </ErrorBoundary>
-    </section>
+    <>
+      <SEO
+        title={mealTitle}
+        description="Bookmark ,watch and learn how to make a meal. "
+      />
+      <section className="min-h-[100vh]">
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <MealDetail setMealTitle={setMealTitle} />
+        </ErrorBoundary>
+      </section>
+    </>
   )
 }
 

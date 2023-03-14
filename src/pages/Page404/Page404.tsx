@@ -1,11 +1,14 @@
 import React from 'react'
-import { PageNotFound } from 'components'
+import { PageNotFound, SEO } from 'components'
 
 function Page404(): JSX.Element {
   return (
-    <section className="min-h-[100vh]">
-      <PageNotFound />
-    </section>
+    <>
+      <SEO title="404" description="" />
+      <section className="min-h-[100vh]">
+        <PageNotFound />
+      </section>
+    </>
   )
 }
 

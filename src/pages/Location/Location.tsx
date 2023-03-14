@@ -1,4 +1,4 @@
-import { ErrorFallback, Filter, PageGrid } from 'components'
+import { ErrorFallback, Filter, PageGrid, SEO } from 'components'
 import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
 
@@ -19,20 +19,26 @@ function Location(): JSX.Element {
   }, [optionEntry])
 
   return (
-    <section className="min-h-[100vh]">
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Filter
-          url={locationListUrl}
-          initial={initial}
-          setOptionEntry={setOptionEntry}
-          valueKey="strArea"
-        />
-      </ErrorBoundary>
+    <>
+      <SEO
+        title="Location"
+        description="Learn how to make a variety of food from different parts of the world."
+      />
+      <section className="min-h-[100vh]">
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Filter
+            url={locationListUrl}
+            initial={initial}
+            setOptionEntry={setOptionEntry}
+            valueKey="strArea"
+          />
+        </ErrorBoundary>
 
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <PageGrid url={locationUrl} />
-      </ErrorBoundary>
-    </section>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <PageGrid url={locationUrl} />
+        </ErrorBoundary>
+      </section>
+    </>
   )
 }
 
