@@ -17,9 +17,6 @@ const CardGrid = function (props: CardGridProps): JSX.Element {
   const url = typeof gridInfo !== 'undefined' ? gridInfo.url : undefined
   const fetchedData = useFetch<CardMeals>(url)
 
-  console.log('%c CardGrid FetchedData', 'color:green;', fetchedData)
-  console.log('%c CardGrid gridInfo', 'color:yellow;', gridInfo)
-
   if (fetchedData?.meals === null) {
     // return this component if meals is null or doesn't exist on the server
     return <div data-testid="empty">{null}</div>
