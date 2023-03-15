@@ -49,9 +49,9 @@ function MealTabs(props: IMealTabs): JSX.Element {
 
   return (
     <section className="flex flex-col min-w-full">
-      <div className="grid md:grid-cols-4 grid-cols-3 font-sans md:text-lg text-base tracking-widest min-w-fit">
+      <div className="grid md:grid-cols-4 grid-cols-3  min-w-fit">
         <button
-          className={`${
+          className={`font-sans md:text-lg text-base tracking-widest ${
             activeTab === 'INSTRUCTIONS'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'
@@ -61,7 +61,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
           Instructions
         </button>
         <button
-          className={`${
+          className={`font-sans md:text-lg text-base tracking-widest ${
             activeTab === 'INGREDIENTS'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'
@@ -71,7 +71,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
           Ingredients
         </button>
         <button
-          className={`${
+          className={`font-sans md:text-lg text-base tracking-widest ${
             activeTab === 'MEASUREMENTS'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'
