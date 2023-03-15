@@ -61,15 +61,15 @@ function Filter(props: IFilterProps): JSX.Element {
     return (
       <section className="px-2 md:px-12 mb-4 md:mb-6 pt-20">
         <form
-          className="flex flex-row justify-between items-center border border-gray-500 p-2"
+          className="flex flex-row justify-between items-center border border-gray-500 p-1"
           role="form"
         >
-          <div className="flex flex-row max-w-fit items-center md:text-2xl text-xl font-sans font-medium tracking-wider space-x-2">
+          <div className="flex flex-row max-w-fit items-center md:text-xl text-lg font-sans font-medium tracking-wider space-x-2">
             <h2>{pathname}</h2>
           </div>
 
           <select
-            className="outline-none w-fit border-2 border-gray-500 p-2"
+            className="outline-none w-fit border border-gray-400 bg-transparent p-2"
             role="listbox"
             onChange={handleSelect}
             defaultValue={props.initial}

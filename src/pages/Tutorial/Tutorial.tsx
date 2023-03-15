@@ -15,7 +15,7 @@ function Tutorial(): JSX.Element {
         route="/tutorial/:videoId"
       />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <section className="flex flex-col justify-center items-center md:px-12 px-2 pt-16 md:pt-20">
+        <section className="flex flex-col justify-center items-center md:px-12 px-2 pt-16 md:pt-20 min-h-full">
           <iframe
             className="min-w-full min-h-[80vh]"
             src={`https://www.youtube.com/embed/${id}?autoplay=1&fs=1`}
