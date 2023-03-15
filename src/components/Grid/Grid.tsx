@@ -17,14 +17,27 @@ function Grid(props: GridProps): JSX.Element {
 
   // takes the first specified amount from fetched data array.
   // generate an array of cards.
-  const cards = dataArr.map((meal) => (
-    <ErrorBoundary FallbackComponent={ErrorFallback} key={meal.idMeal}>
-      <Card meal={meal.strMeal} img={meal.strMealThumb} mealId={meal.idMeal} />
-    </ErrorBoundary>
-  ))
+  const cards = React.useMemo(
+    () =>
+      dataArr.map((meal) => (
+        <ErrorBoundary FallbackComponent={ErrorFallback} key={meal.idMeal}>
+          <Card
+            meal={meal.strMeal}
+            img={meal.strMealThumb}
+            mealId={meal.idMeal}
+          />
+        </ErrorBoundary>
+      )),
+    [dataArr]
+  )
 
   // display the whole grid as required.
-  console.log(cards, props.gridContent)
+  console.group()
+  console.log('%c Heading:%o', 'color:red;', props.gridContent)
+  console.log('%c Data:%o', 'color:blue;', dataArr)
+
+  console.table(cards)
+  console.groupEnd()
   if (cards.length > 0) {
     return (
       <section className="flex flex-col md:px-10 px-2 space-y-4 mb-4 text-base md:text-xl font-sans font-normal md:font-normal tracking-wide">
