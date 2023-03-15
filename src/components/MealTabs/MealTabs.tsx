@@ -7,7 +7,7 @@ interface IMealTabs {
 }
 
 function MealTabs(props: IMealTabs): JSX.Element {
-  const [activeTab, setActiveTab] = React.useState('INSTRUCTIONS')
+  const [activeTab, setActiveTab] = React.useState('STEPS')
 
   // returns elements to display based on activeTab value
   const activeTabDisplay = React.useMemo(() => {
