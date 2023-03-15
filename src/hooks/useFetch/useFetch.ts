@@ -6,7 +6,7 @@ function useFetch<T>(url: string | undefined): T | undefined {
   const [data, setData] = React.useState<T>()
   const getData = async (): Promise<void> => {
     try {
-      if (typeof url !== 'undefined') {
+      if (typeof url === 'string') {
         const fetchedData = await axios(url)
         setData(fetchedData.data)
       }

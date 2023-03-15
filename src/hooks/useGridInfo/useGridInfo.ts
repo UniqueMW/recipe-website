@@ -14,7 +14,7 @@ import type {
 
 type GridInfoObjects = CategoryObject & LocationObject & IngredientObject
 
-function useGridInfo(contentType: string, url: string): GridInfo {
+function useGridInfo(contentType: string, url: string): GridInfo | undefined {
   const [gridInfo, setGridInfo] = React.useState<GridInfo>()
   const fetchedData = useFetch<GridInfoObjects>(url)
 
@@ -57,16 +57,9 @@ function useGridInfo(contentType: string, url: string): GridInfo {
 
       setGridInfo(newGridInfo)
     }
-  }, [url, contentType, fetchedData])
+  }, [fetchedData])
 
-  if (typeof gridInfo !== 'undefined') {
-    return gridInfo
-  }
-
-  return {
-    content: '',
-    url: ''
-  }
+  return gridInfo
 }
 
 export default useGridInfo
