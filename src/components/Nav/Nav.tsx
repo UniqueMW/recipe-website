@@ -5,7 +5,7 @@ import { FaSearch, FaRegBookmark } from 'react-icons/fa'
 function Nav(): JSX.Element {
   const { pathname } = useLocation()
   return (
-    <nav className="bg-primary lg:flex flex-row py-4 px-20 md:text-xl text-lg font-normal justify-between shadow-sm content-center hidden fixed min-w-full z-10 top-0 right-0">
+    <nav className="bg-primary lg:flex flex-row py-4 px-20 text-lg font-normal justify-between shadow-sm content-center hidden fixed min-w-full z-10 top-0 right-0">
       <Link to="/" className="md:text-2xl text-xl font-bold tracking-wider">
         UniqueMW
       </Link>

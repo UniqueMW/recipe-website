@@ -84,7 +84,7 @@ function MealDetail(props: IMealDetailProps): JSX.Element {
   if (typeof meal !== 'undefined') {
     return (
       <section className="md:px-12 px-1">
-        <section className="flex xl:flex-row flex-col md:my-20 justify-between gap-2 items-center border border-gray-500 max-w-full">
+        <section className="flex xl:flex-row flex-col md:my-20 justify-center gap-2 items-center border border-gray-500 max-w-full">
           <img
             src={meal.strMealThumb}
             onError={handleBrokenImage}

@@ -21,7 +21,7 @@ function Card(props: CardProps): JSX.Element {
           onError={handleBrokenImage}
           title={props.meal}
         />
-        <h1 className="md:text-xl text-base tracking-wider font-sans px-1">
+        <h1 className="md:text-lg text-base tracking-wider font-sans px-1">
           {props.meal}
         </h1>
       </section>
