@@ -22,7 +22,7 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   } else if (typeof fetchedData !== 'undefined') {
     return (
       <Grid
-        fetchedData={fetchedData?.meals}
+        fetchedData={fetchedData.meals}
         amount={props.amount}
         gridContent={gridInfo.content}
       />
