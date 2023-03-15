@@ -43,7 +43,7 @@ function Filter(props: IFilterProps): JSX.Element {
   // Selected option is created based on the initial value
   const optionsArray = React.useMemo(() => {
     return entries?.map((item: string, index) => (
-      <option key={`${item}${index}`} value={item}>
+      <option key={`${item}${index}`} value={item} className="max-w-fit">
         {item}
       </option>
     ))
@@ -69,7 +69,7 @@ function Filter(props: IFilterProps): JSX.Element {
           </div>
 
           <select
-            className="outline-none w-fit border border-gray-400 bg-transparent p-2"
+            className="outline-none max-w-fit border border-gray-400 bg-transparent p-2"
             role="listbox"
             onChange={handleSelect}
             defaultValue={props.initial}
