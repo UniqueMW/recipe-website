@@ -5,7 +5,7 @@ import { ErrorBoundary } from 'react-error-boundary'
 
 function Home(): JSX.Element {
   const categoryListUrl =
-    'https:www.themealdb.com/api/json/v1/1/list.php?c=list'
+    'https://www.themealdb.com/api/json/v1/1/list.php?c=list'
 
   const locationListUrl =
     'https://www.themealdb.com/api/json/v1/1/list.php?a=list'
