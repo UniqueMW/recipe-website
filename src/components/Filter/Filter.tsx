@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { IoFilterSharp } from 'react-icons/io5'
 import _ from 'lodash'
 import { useFetch } from 'hooks'
 import { Loading } from 'components'
 
 import type { CategoryObject, LocationObject, IngredientObject } from 'types'
+import { useLocation } from 'react-router-dom'
 
 interface IFilterProps {
   url: string
@@ -17,6 +17,7 @@ type GridInfoObjects = CategoryObject & LocationObject & IngredientObject
 function Filter(props: IFilterProps): JSX.Element {
   // fetch filter options value based on passed url
   const fetchedData = useFetch<GridInfoObjects>(props.url)
+  const { pathname } = useLocation()
 
   const [entries, setEntries] = React.useState<string[]>()
 
@@ -58,18 +59,17 @@ function Filter(props: IFilterProps): JSX.Element {
     typeof fetchedData !== 'undefined'
   ) {
     return (
-      <div className="px-2 md:px-12 mb-4 md:mb-6">
+      <section className="px-2 md:px-12 mb-4 md:mb-6 pt-20">
         <form
-          className="flex flex-row justify-between items-center pt-20"
+          className="flex flex-row justify-between items-center border border-gray-500 p-2"
           role="form"
         >
-          <div className="flex flex-row max-w-fit items-center md:text-2xl text-xl font-sans font-semibold tracking-wider space-x-2">
-            <h2>Catalog</h2>
-            <IoFilterSharp />
+          <div className="flex flex-row max-w-fit items-center md:text-2xl text-xl font-sans font-medium tracking-wider space-x-2">
+            <h2>{pathname}</h2>
           </div>
 
           <select
-            className="outline-none min-w-[15%] border-2 border-gray-500 p-2"
+            className="outline-none w-fit border-2 border-gray-500 p-2"
             role="listbox"
             onChange={handleSelect}
             defaultValue={props.initial}
@@ -77,7 +77,7 @@ function Filter(props: IFilterProps): JSX.Element {
             {optionsArray}
           </select>
         </form>
-      </div>
+      </section>
     )
   }
 

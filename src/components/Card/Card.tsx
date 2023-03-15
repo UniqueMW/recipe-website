@@ -12,7 +12,7 @@ function Card(props: CardProps): JSX.Element {
   return (
     <Link
       to={`/meal/:${props.mealId}`}
-      className="space-y-3 border border-gray-500 min-h-full"
+      className="space-y-3 border border-gray-500 min-h-full shadow-sm"
     >
       <section className="flex flex-col ">
         <img

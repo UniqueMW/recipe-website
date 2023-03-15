@@ -8,9 +8,11 @@ interface sideMenuProps {
 
 function SideMenu(props: sideMenuProps): JSX.Element {
   const { pathname } = useLocation()
+
   const handleHideMenu = (): void => {
     props.setShowMenu(false)
   }
+
   return (
     <div
       className="flex flex-row fixed inset-0 lg:hidden side z-20"
@@ -18,7 +20,11 @@ function SideMenu(props: sideMenuProps): JSX.Element {
     >
       <section className="flex flex-col space-y-10 bg-primary text-lg font-sans px-4 shadow-md min-h-screen min-w-[60vw]  py-4">
         <div className="flex flex-row justify-between">
-          <Link to="/" className="text-xl font-bold tracking-wider ">
+          <Link
+            to="/"
+            className="text-xl font-bold tracking-wider "
+            onClick={handleHideMenu}
+          >
             UniqueMW
           </Link>
           <button onClick={handleHideMenu} className="text-xl font-bold">
@@ -29,6 +35,7 @@ function SideMenu(props: sideMenuProps): JSX.Element {
           <Link
             to="/"
             className={`${pathname === '/' ? 'text-action' : 'text-black'}`}
+            onClick={handleHideMenu}
           >
             Home
           </Link>
@@ -37,6 +44,7 @@ function SideMenu(props: sideMenuProps): JSX.Element {
             className={`${
               pathname === '/category' ? 'text-action' : 'text-black'
             }`}
+            onClick={handleHideMenu}
           >
             Category
           </Link>
@@ -45,6 +53,7 @@ function SideMenu(props: sideMenuProps): JSX.Element {
             className={`${
               pathname === '/location' ? 'text-action' : 'text-black'
             }`}
+            onClick={handleHideMenu}
           >
             Location
           </Link>
@@ -53,6 +62,7 @@ function SideMenu(props: sideMenuProps): JSX.Element {
             className={`${
               pathname === '/ingredients' ? 'text-action' : 'text-black'
             }`}
+            onClick={handleHideMenu}
           >
             Ingredients
           </Link>
@@ -61,6 +71,7 @@ function SideMenu(props: sideMenuProps): JSX.Element {
             className={`${
               pathname === '/contact' ? 'text-action' : 'text-black'
             }`}
+            onClick={handleHideMenu}
           >
             Contact Me
           </Link>

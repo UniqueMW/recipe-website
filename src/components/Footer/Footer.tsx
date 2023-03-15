@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { BsGithub, BsTwitter } from 'react-icons/bs'
-import { BiCopyright } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 
 function Footer(): JSX.Element {
@@ -14,7 +13,7 @@ function Footer(): JSX.Element {
         UniqueMW
       </Link>
       <div className="flex flex-col justify-center space-y-4 w-full md:mt-0 mt-2">
-        <div className="flex flex-col md:flex-row justify-between space-y-2 md:space-y-0">
+        <div className="flex flex-col-reverse md:flex-row justify-between space-y-2 md:space-y-0">
           <section className="flex flex-row w-full justify-center md:text-xl text-base font-sans space-x-10 items-center md:ml-10">
             {/* <Link to="about">About Me</Link> */}
             <Link to="contact">Contact Me</Link>
@@ -38,8 +37,7 @@ function Footer(): JSX.Element {
           </section>
         </div>
         <h2 className="flex flex-row text-center font-sans md:text-lg text-base items-center justify-center space-x-2 tracking-wider">
-          <BiCopyright />
-          {`${year} UniqueMW Malawi. All rights reserved.`}
+          &#169;{` ${year} `}UniqueMW Malawi. All rights reserved.
         </h2>
       </div>
     </footer>
