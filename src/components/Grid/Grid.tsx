@@ -35,8 +35,7 @@ function Grid(props: GridProps): JSX.Element {
   console.group()
   console.log('%c Heading:%o', 'color:red;', props.gridContent)
   console.log('%c Data:%o', 'color:blue;', dataArr)
-
-  console.table(cards)
+  console.log('%c FetchedData', 'color:pink;', props.fetchedData)
   console.groupEnd()
   if (cards.length > 0) {
     return (
