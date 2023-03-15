@@ -1,6 +1,6 @@
 # UniqueMW Recipe App
 
-This web app made with React allows users to explore and watch tutorials of cooking recipes across the world.
+This [web app](https://uniquemwrecipes.netlify.app/) made with React allows users to explore and watch tutorials of cooking recipes across the world.
 
 ## Tech Stack
 
@@ -17,8 +17,9 @@ This web app made with React allows users to explore and watch tutorials of cook
 
 ## Screenshots
 
-![App Screenshot](Screenshot (2).png)
+<img src="Screenshot (2).png"/>
 
-![App Screenshot](Screenshot (3).png)
+<img src="Screenshot (3).png"/>
 
-![App Screenshot](Screenshot (4).png)
+<img src="Screenshot (4).png"/>
+
