@@ -1,7 +1,7 @@
 import * as React from 'react'
 import _ from 'lodash'
 import { ErrorBoundary } from 'react-error-boundary'
-import { Card, Empty, ErrorFallback } from 'components'
+import { Card, ErrorFallback } from 'components'
 import type { CardMeal } from 'types'
 
 interface GridProps {
@@ -41,7 +41,7 @@ function Grid(props: GridProps): JSX.Element {
     )
   }
 
-  return <Empty />
+  return <h1></h1>
 }
 
 export default Grid
