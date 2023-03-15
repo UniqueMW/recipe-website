@@ -11,7 +11,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
 
   // returns elements to display based on activeTab value
   const activeTabDisplay = React.useMemo(() => {
-    if (activeTab === 'INSTRUCTIONS') {
+    if (activeTab === 'STEPS') {
       return (
         <p className="text-lg border-x border-b border-gray-500 px-2 py-4 text-justify tracking-wider h-64 max-h-full overflow-auto scrollbar-thumb-action scrollbar-track-transparent scrollbar-thin">
           {props.instructions}
@@ -26,7 +26,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
           {listOfIngredients}
         </ul>
       )
-    } else if (activeTab === 'MEASUREMENTS') {
+    } else if (activeTab === 'MEASURE') {
       const listOfMeasurements = props.measurements?.map((item, index) => {
         return <li key={`${item}${index}`}>{item}</li>
       })
