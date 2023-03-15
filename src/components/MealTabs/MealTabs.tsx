@@ -58,7 +58,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
           } border-gray-500 min-w-fit`}
           onClick={handleActiveTab}
         >
-          Instructions
+          Steps
         </button>
         <button
           className={`font-sans md:text-lg text-base tracking-widest ${
