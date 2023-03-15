@@ -32,11 +32,6 @@ function Grid(props: GridProps): JSX.Element {
   )
 
   // display the whole grid as required.
-  console.group()
-  console.log('%c Heading:%o', 'color:red;', props.gridContent)
-  console.log('%c Data:%o', 'color:blue;', dataArr)
-  console.log('%c FetchedData', 'color:pink;', props.fetchedData)
-  console.groupEnd()
   if (cards.length > 0 && props.fetchedData.length > 0) {
     return (
       <section className="flex flex-col md:px-10 px-2 space-y-4 mb-4 text-base md:text-xl font-sans font-normal md:font-normal tracking-wide">

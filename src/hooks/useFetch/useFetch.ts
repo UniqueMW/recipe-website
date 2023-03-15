@@ -5,7 +5,7 @@ import * as React from 'react'
 function useFetch<T>(url: string | undefined): T | undefined {
   const [data, setData] = React.useState<T>()
   React.useEffect(() => {
-    if (typeof url !== 'undefined') {
+    if (typeof url === 'string') {
       axios<T>(url)
         .then((response) => {
           setData(response.data)
