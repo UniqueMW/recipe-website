@@ -16,7 +16,9 @@ const CardGrid = function (props: CardGridProps): JSX.Element {
   // Fetch data to be rendered, from an api.
   const fetchedData = useFetch<CardMeals>(gridInfo.url)
 
-  console.log('%c CardGrid', 'color:green;', fetchedData, gridInfo.content)
+  console.log('%c CardGrid FetchedData', 'color:green;', fetchedData)
+  console.log('%c CardGrid gridInfo', 'color:yellow;', gridInfo)
+
   if (fetchedData?.meals === null) {
     // return this component if meals is null or doesn't exist on the server
     return <div data-testid="empty">{null}</div>
