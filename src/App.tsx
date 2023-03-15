@@ -15,7 +15,8 @@ import {
   Contact,
   Page404
 } from 'pages/index'
-
+// TODO close sidemenu on page change
+// TODO fix footer
 function App(): JSX.Element {
   return (
     <HelmetProvider>
