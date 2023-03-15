@@ -18,7 +18,7 @@ import Empty from './Empty/Empty'
 import Loading from './Loading/Loading'
 import PageNotFound from './PageNotFound/PageNotFound'
 import SEO from './SEO/SEO'
-
+import ScrollToTop from './ScrollToTop/ScrollToTop'
 export {
   Nav,
   MobileNav,
@@ -39,5 +39,6 @@ export {
   Empty,
   Loading,
   PageNotFound,
-  SEO
+  SEO,
+  ScrollToTop
 }
