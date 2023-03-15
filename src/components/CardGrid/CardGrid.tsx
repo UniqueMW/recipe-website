@@ -9,7 +9,7 @@ interface CardGridProps {
   amount: number
 }
 
-const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
+const CardGrid = function (props: CardGridProps): JSX.Element {
   // generate random data and url for cardGrid based on category,ingredient and location
   const gridInfo = useGridInfo(props.gridContent, props.url)
 
@@ -30,8 +30,6 @@ const CardGrid = React.memo(function (props: CardGridProps): JSX.Element {
   } else {
     return <Loading />
   }
-})
-
-CardGrid.displayName = 'CardGrid'
+}
 
 export default CardGrid
