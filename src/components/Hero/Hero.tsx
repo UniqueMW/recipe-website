@@ -49,7 +49,7 @@ function Hero(): JSX.Element {
             src={fetchedData.strMealThumb}
             onError={handleBrokenImage}
             alt={fetchedData.strMeal}
-            className="border border-gray-500 lg:border-l-0 lg:border-b border-b-0"
+            className="border border-gray-500 lg:border-l-0 lg:border-b border-b-0 max-w-[50]"
             title={fetchedData.strMeal}
           />
         </section>
