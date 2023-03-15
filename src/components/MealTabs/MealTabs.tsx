@@ -52,7 +52,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
       <div className="grid md:grid-cols-4 grid-cols-3  min-w-fit">
         <button
           className={`font-sans md:text-lg text-base tracking-widest ${
-            activeTab === 'INSTRUCTIONS'
+            activeTab === 'STEPS'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'
           } border-gray-500 min-w-fit`}
@@ -72,13 +72,13 @@ function MealTabs(props: IMealTabs): JSX.Element {
         </button>
         <button
           className={`font-sans md:text-lg text-base tracking-widest overflow-clip ${
-            activeTab === 'MEASUREMENTS'
+            activeTab === 'MEASURE'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'
           } border-gray-500 min-w-fit`}
           onClick={handleActiveTab}
         >
-          Measurements
+          Measure
         </button>
         <div className=" border-b border-gray-500 hidden md:block" />
       </div>
