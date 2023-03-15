@@ -1,0 +1,8 @@
+https://uniquemwrecipes.netlify.app/
+https://uniquemwrecipes.netlify.app/category
+https://uniquemwrecipes.netlify.app/location
+https://uniquemwrecipes.netlify.app/ingredients
+https://uniquemwrecipes.netlify.app/contact
+https://uniquemwrecipes.netlify.app/bookmark
+https://uniquemwrecipes.netlify.app/search
+https://uniquemwrecipes.netlify.app/privacy
