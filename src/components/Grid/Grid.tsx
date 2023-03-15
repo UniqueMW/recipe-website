@@ -30,7 +30,9 @@ function Grid(props: GridProps): JSX.Element {
         <h1 className="mt-10 text-xl md:text-2xl font-sans font-semibold border-b border-b-gray-500">
           {props.gridContent}
         </h1>
-      ) : null}
+      ) : (
+        <h1></h1>
+      )}
       <section className="grid lg:grid-cols-5 md:grid-cols-4 grid-cols-2 grid-flow-row gap-4">
         {cards}
       </section>
