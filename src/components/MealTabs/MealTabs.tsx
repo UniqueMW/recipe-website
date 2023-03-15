@@ -71,7 +71,7 @@ function MealTabs(props: IMealTabs): JSX.Element {
           Ingredients
         </button>
         <button
-          className={`font-sans md:text-lg text-base tracking-widest ${
+          className={`font-sans md:text-lg text-base tracking-widest overflow-clip ${
             activeTab === 'MEASUREMENTS'
               ? 'border-x border-t text-action font-semibold'
               : 'border-b'

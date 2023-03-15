@@ -90,7 +90,7 @@ function MealDetail(props: IMealDetailProps): JSX.Element {
             onError={handleBrokenImage}
             alt={meal.strMeal}
             title={meal.strMeal}
-            className="max-w-[50%]"
+            className="min-w-full md:min-w-[50%]"
           />
 
           <section className="px-2 font-sans space-y-10 max-w-full w-full mb-4 md:mb-0">
