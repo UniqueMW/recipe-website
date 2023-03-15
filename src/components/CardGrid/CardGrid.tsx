@@ -20,6 +20,7 @@ const CardGrid = function (props: CardGridProps): JSX.Element {
     // return this component if meals is null or doesn't exist on the server
     return <div data-testid="empty">{null}</div>
   } else if (typeof fetchedData !== 'undefined') {
+    console.log('%c CardGrid', 'color:green;', fetchedData, gridInfo.content)
     return (
       <Grid
         fetchedData={fetchedData.meals}
