@@ -19,11 +19,11 @@ it('SHould render the default display.', () => {
   )
 
   const instructionsButton = screen.getByRole('button', {
-    name: /instructions/i
+    name: /steps/i
   })
   const ingredientsButton = screen.getByRole('button', { name: /ingredients/i })
   const measurementsButton = screen.getByRole('button', {
-    name: /measurements/i
+    name: /measure/i
   })
   const instructionsParagraph = screen.getByText(/cook/i)
 
@@ -66,7 +66,7 @@ it('Should display measurement if measurements tab is active', async () => {
   )
 
   const measurementsButton = screen.getByRole('button', {
-    name: /Measurements/i
+    name: /Measure/i
   })
 
   user.click(measurementsButton)

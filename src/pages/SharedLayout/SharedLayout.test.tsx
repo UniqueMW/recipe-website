@@ -10,7 +10,8 @@ jest.mock('components', () => ({
   Nav: () => <h1>nav pc</h1>,
   Footer: () => <h1>Footer</h1>,
   MobileNav: () => <h1>Mobile nav</h1>,
-  SideMenu: () => <h1>Side Menu</h1>
+  SideMenu: () => <h1>Side Menu</h1>,
+  ScrollToTop: () => <h1>Scroll to top</h1>
 }))
 
 // mock gsap library
@@ -27,10 +28,12 @@ it('Should render all the components.', () => {
   })
   const sideMenuComponent = screen.getByRole('heading', { name: /side menu/i })
   const outlet = screen.getByRole('heading', { name: /outlet/i })
+  const scrollToTop = screen.getByRole('heading', { name: /scroll to top/i })
 
   expect(navComponent).toBeInTheDocument()
   expect(footerComponent).toBeInTheDocument()
   expect(mobileNavComponent).toBeInTheDocument()
   expect(sideMenuComponent).toBeInTheDocument()
   expect(outlet).toBeInTheDocument()
+  expect(scrollToTop).toBeInTheDocument()
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import { render, screen } from '@testing-library/react'
 import user from '@testing-library/user-event'
 import type { LocationObject } from 'types'
-
+import { MemoryRouter } from 'react-router-dom'
 import Filter from './Filter'
 
 let mockFetchedData: LocationObject | undefined
@@ -18,12 +18,14 @@ const setOPtionEntryMock = jest.fn()
 
 it('Should check if component renders correct if fetchedData is undefined', () => {
   render(
-    <Filter
-      setOptionEntry={setOPtionEntryMock}
-      url="https://testing"
-      valueKey="strArea"
-      initial="chicken"
-    />
+    <MemoryRouter>
+      <Filter
+        setOptionEntry={setOPtionEntryMock}
+        url="https://testing"
+        valueKey="strArea"
+        initial="chicken"
+      />
+    </MemoryRouter>
   )
 
   const loadingComponent = screen.getByRole('heading', { name: /loading/i })
@@ -43,12 +45,14 @@ it('Should check if component renders correct if fetchedData is defined', () => 
     ]
   }
   render(
-    <Filter
-      setOptionEntry={setOPtionEntryMock}
-      url="https://testing"
-      valueKey="strArea"
-      initial="chicken"
-    />
+    <MemoryRouter>
+      <Filter
+        setOptionEntry={setOPtionEntryMock}
+        url="https://testing"
+        valueKey="strArea"
+        initial="chicken"
+      />
+    </MemoryRouter>
   )
 
   const form = screen.getByRole('form')
@@ -73,12 +77,14 @@ it('Should check if setOptionEntry is called.', () => {
   }
 
   render(
-    <Filter
-      setOptionEntry={setOPtionEntryMock}
-      url="https://testing"
-      valueKey="strArea"
-      initial="chicken"
-    />
+    <MemoryRouter>
+      <Filter
+        setOptionEntry={setOPtionEntryMock}
+        url="https://testing"
+        valueKey="strArea"
+        initial="chicken"
+      />
+    </MemoryRouter>
   )
 
   // eslint-disable-next-line
