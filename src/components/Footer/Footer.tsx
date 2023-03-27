@@ -37,7 +37,7 @@ function Footer(): JSX.Element {
           </section>
         </div>
         <h2 className="flex flex-row text-center font-sans md:text-lg text-base items-center justify-center space-x-2 tracking-wider">
-          &#169;{` ${year} `}UniqueMW Malawi. All rights reserved.
+          &#169;{` ${year} `}UniqueMW. All rights reserved.
         </h2>
       </div>
     </footer>
