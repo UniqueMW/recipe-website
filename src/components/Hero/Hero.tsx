@@ -25,8 +25,11 @@ function Hero(): JSX.Element {
   // render hero component if nothing is wrong.
   if (typeof fetchedData !== 'undefined') {
     return (
-      <Link to={`meal/:${fetchedData.idMeal}`}>
-        <section className="flex xl:flex-row flex-col-reverse md:px-12 px-2 text-lg font-sans justify-center lg:max-h-[90%] mt-16">
+      <section className="md:px-12 px-2">
+        <Link
+          to={`meal/:${fetchedData.idMeal}`}
+          className="flex xl:flex-row flex-col-reverse text-lg font-sans justify-center lg:max-h-[90%] mt-16"
+        >
           <section className=" flex flex-col border xl:border-r-0 md:border-t border-t-0 border-gray-500 min-w-[40vw] font-medium px-4 py-10 md:space-y-14 space-y-8 items-center bg-primary">
             <h1 className="font-bold text-center md:text-6xl text-3xl tracking-wider border-b-2 border-gray-500 max-w-fit md:mt-16">
               {fetchedData.strMeal}
@@ -52,8 +55,8 @@ function Hero(): JSX.Element {
             className="border border-gray-500 lg:border-l-0 lg:border-b border-b-0 max-w-[50]"
             title={fetchedData.strMeal}
           />
-        </section>
-      </Link>
+        </Link>
+      </section>
     )
   }
   // render this component when loading.
